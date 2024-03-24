@@ -1,0 +1,280 @@
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+   font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+li>a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+header img{
+    width: 100%;
+    height: 100px;
+}
+/* ...............Nav....................... */
+nav{
+    width: 100%;
+    background: #000;
+    /* margin-top: -4px; */
+    
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li, a{
+    color: white;
+    font-size: 12px;
+}
+
+nav ul li:nth-child(1) a{
+    font-size: 40px;
+    margin-left: -30px;
+    color: white;
+    text-decoration: none;
+}
+nav ul li:nth-child(2) span:hover{
+    color: #FFF200;
+}
+nav ul li:nth-child(2) i{
+    color: #FFF200;
+    font-size: 15px;
+}
+
+nav ul li:nth-child(3) input{
+    width: 160px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+nav ul li:nth-child(3) i{
+    position: absolute;
+    font-size: 17px;
+    margin-left: -25px;
+    color: black;
+    line-height: 30px;
+}
+nav ul li:nth-child(4) button{
+    height: 30px;
+    padding: 0 12px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+}
+
+nav ul li:nth-child(4) button:hover {
+    background: #575757;
+}
+.textnone{
+    text-decoration: none;
+    color: white;
+}
+nav ul li:nth-child(5) a:hover {
+    color: #FFF200;
+
+}
+nav ul li:nth-child(6) a:hover {
+    color: #FFF200;
+
+}
+nav ul li:nth-child(7) a:hover {
+    color: #FFF200;
+
+}
+nav ul li:nth-child(8) a:hover {
+    color: #FFF200;
+
+}
+nav ul li:nth-child(9) a:hover {
+    color: #FFF200;
+
+}
+
+/* ..................menu.......................... */
+.menu{
+    display: flex;
+    width: 1147.5px;
+    background: #FFF200;
+    justify-content: center;
+    height: 40px;
+    border-top: 1px solid rgb(77, 76, 76);
+    text-align: center;
+    margin-top: -16px;
+    /* border: 1px solid red; */
+}
+
+.main-menu{
+    width: 1000px;
+    margin-top: 30px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: cente
+    
+}
+
+.main-menu li >a{
+    line-height: 40px;
+    color: black;
+    position: relative;
+    display: block;
+}
+
+.textmenu{
+    font-size: 20px;
+    /* font-weight: bold; */
+}
+
+.main-menu ul.sup-menu{
+    margin-top: -10px;
+    border: 1px solid rgb(195, 188, 188);
+    position: absolute;
+    width: 100px;
+    position: absolute;
+    background: #f6ea07;
+    list-style: none;
+    border-radius: 5px;
+    display: none;
+}
+.main-menu li:hover>ul.sup-menu{
+    display: block;
+
+}
+
+.main-menu ul.sup-menu a{
+    /* border: 1px solid red; */
+    text-align: left;
+    width: 150px;
+    color: black;
+    margin-bottom: 2px;
+    padding:5px;
+    left: 0;
+    height: 40px;
+}
+
+
+.main-menu li:hover{
+    border-bottom: 1px solid white;
+}
+
+
+.main-menu ul.sup-menu li{
+    width: 200px;
+    margin-left: -32px;    
+}
+
+
+
+.main-menu ul.sup-menu li:last-child a{
+    border: none;
+}
+
+.main-menu ul.sup-menu ul.sup-menu{
+    left: 151px;
+    top: 51px;
+}
+.main-menu ul.sup-menu ul.sup-menu li:last-child a{
+    border: none;
+    
+}
+
+
+
+
+/* ....................section........................ */
+
+section{
+    text-align: center;
+}
+
+section>img{
+    /* border: 1px solid white; */
+    /* border-radius: 5px; */
+    width: 700px;
+}
+.khunggt{
+    
+    margin-left: 223.5px;
+    width: 700px; 
+    /* background: red; */
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+.rowgt{
+    
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+}
+.rowgt img{
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 5px;
+}
+
+.anhsec{
+    border: 1px solid rgb(226, 223, 223);
+    height: 280px;
+    border-radius: 0.1px;
+    margin-top: 0.1px;
+    transition: transform 2s;
+}
+.anhsec>img{
+    transition: all 0.5s ease;
+}
+.anhsec:hover{
+    border: 1px solid rgb(154, 150, 150);
+    transition: all 0.5s ease;
+}
+
+.anhsec:hover img{
+    transform: translateY(-8px);
+}
+/* .................footer...................... */
+footer{
+    width: 1147.5px;
+}
+td{
+    font-size: 12px;
+    color: white;
+}
+table{
+    margin-left: 200px;
+}
+
+td>a{
+    color: white;
+    text-decoration: none;
+}
+
+.linkxanh{
+    color: #2f80ed;
+    font-weight: bold;
+}
+
+
+
