@@ -36,6 +36,7 @@ td{
 .title{
     font-size: 20px;
     font-weight: bold;
+    text-align: left;
 }
 .title-CH{
     margin: 15px 0;
@@ -68,8 +69,16 @@ td{
 }
 
 /* tab gia*/
+.nav-item{
+    background: #eeeeef;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
 .tab-content{
     font-size: 14px;
+    border: 1px solid #e0e0e0;
+    margin-top: 10px;
 }
 .box-price-present, .box-price-old, .box-price-percent ,p{
     color: black;
@@ -77,6 +86,7 @@ td{
 .nav-link.active .box-price-present,.nav-link.active .box-price-percent{
     color: red;
 }
+
 .box-price-present{
     font-size: 16px;
     font-weight: bold;
@@ -93,6 +103,23 @@ td{
 }
 .nav-link p{
     margin-bottom: 0 ;
+}
+.nav-tabs .nav-link {
+    margin-bottom: 1px !important;
+    
+    
+}
+/* sieu thi */
+.sieuthi{
+    margin-bottom: 10px;
+}
+.title-st{
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+.dis-st{
+    text-align: left;
 }
 /* btn mua */
 .button-mua{
@@ -139,6 +166,7 @@ td{
     background-color: #f6f6f6;
     border-bottom: 1px solid #e0e0e0;
     padding: 8px 10px;
+    text-align: left;
 }
 .content-discount{
     padding: 15px 10px 10px 10px;
@@ -161,11 +189,15 @@ td{
     text-align: left;
     
 }
+/*  */
 .noibat{
+    margin: auto;
+    width: 950px;
     text-align: left;
     background-color: #f2f2f2;
-    padding: 20px 0 5px 20px;
+    padding: 20px 0 5px 70px;
     border-radius: 10px;
+    line-height: 35px;
 }
 .noibat p{
     color: red;
@@ -178,3 +210,89 @@ td{
     text-align: justify;
     padding: 20px;
 }
+/* cmt */
+.title-total{
+    font-weight: bold;
+    margin-top: 45px;
+
+}
+.danhGiaSP{
+    padding: 20px;
+}
+.main-cmt{
+    display: flex;
+    padding: 20px;
+}
+
+.total-cmt{
+    flex: 1;
+    padding-right: 20px;
+    border-right: 1px solid rgba(128, 128, 128, 0.291);
+}
+.detail-cmt{
+    padding-left: 20px;
+    flex: 1.5;
+    
+}
+.bar-container,.bar{
+    border-radius: 20px;
+}
+.fa {
+    font-size: 25px;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  /* Three column layout */
+  .side {
+    float: left;
+    margin-top: 10px;
+  }
+  
+  .middle {
+    float: left;
+    width: 70%;
+    padding: 0 20px;
+  }
+  
+  /* Place text to the right */
+  .right {
+    text-align: right;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* The bar container */
+  .bar-container {
+    width: 100%;
+    
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+    margin-top: 15px ;
+  }
+  
+  /* Individual bars */
+  .bar-5 {width: 60%; height: 18px; background-color: #ff9800;}
+  .bar-4 {width: 30%; height: 18px; background-color: #ff9800;}
+  .bar-3 {width: 10%; height: 18px; background-color: #ff9800;}
+  .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+  .bar-1 {width: 15%; height: 18px; background-color: #ff9800;}
+  
+  /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+  @media (max-width: 400px) {
+    .side, .middle {
+      width: 100%;
+    }
+    /* Hide the right column on small screens */
+    .right {
+      display: none;
+    }
+  }
