@@ -78,7 +78,7 @@ td{
 .tab-content{
     font-size: 14px;
     border: 1px solid #e0e0e0;
-    margin-top: 10px;
+    border-top: none;
 }
 .box-price-present, .box-price-old, .box-price-percent ,p{
     color: black;
@@ -104,11 +104,7 @@ td{
 .nav-link p{
     margin-bottom: 0 ;
 }
-.nav-tabs .nav-link {
-    margin-bottom: 1px !important;
-    
-    
-}
+
 /* sieu thi */
 .sieuthi{
     margin-bottom: 10px;
