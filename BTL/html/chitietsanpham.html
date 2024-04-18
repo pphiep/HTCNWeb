@@ -14,114 +14,32 @@
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/chuyenanh.js"></script>
     <script src="../js/dangky.js"></script>
+    <script src="../js/index.js"></script>
 </head>
 
 <body>
     <header>
         <img src="../img/blackFriday.gif" alt="">
     </header>
-    <nav>
-        <div class="container">
-            <ul>
-                <li style="height: 50px;"><a href="../html/index.html" style="line-height: 50px;">XShop</a></li>
-                <li><a href="" style="text-decoration: none;">
-                        <p style="color: white; font-size: 10px; text-decoration: none; padding-top: 15px;">Xem giá,
-                            khuyến mãi tại <br> <span style="font-size: 10px;">Hồ Chí Minh...</span><i
-                                class="fas fa-sort-down"></i> </p>
-                    </a></li>
-                <li> <a href=""><input type="text" placeholder="  Tìm kiếm...." class=""> <i
-                            class="fas fa-search"></a></i></li>
-                <li><button><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
-                <li><a href="#" class="textnone">Trang Chủ</a></li>
-                <li><a href="#" class="textnone">Giới thiệu</a></li>
-                <li><a href="#" class="textnone">Liên hệ</a></li>
-                <li><a href="#" class="textnone" data-bs-toggle="modal" data-bs-target="#modallog">Đăng nhập</a></li>
-                <li><a href="#" class="textnone" data-bs-toggle="modal" data-bs-target="#dangky"> Đăng ký</a></li>
-
-            </ul>
-        </div>
-    </nav>
-    <div class="menu">
-        <ul class="main-menu" style="justify-content: space-between;">
-            <li>
-                <a href="#" class="textmenu"> iPhone <i class="fas fa-sort-down"></i></a>
-                <ul class="sup-menu" style="width:150px;">
-                    <li style="width: 149px;"><a href="#" class="liip">iPhone 15 Pro Max</a>
-                    </li>
-                    <li style="width: 149px;"><a href="#" class="liip">iPhone14 </a>
-                        <ul class="sup-menu" style="width: 200px;">
-                            <li><a href="#">iPhone14 Pro Max</a></li>
-                            <li><a href="#">iPhone14 Pro </a></li>
-                            <li><a href="#">iPhone14 Plus</a></li>
-
-                        </ul>
-                    </li>
-                    <li style="width: 149px;"><a href="#" class="liip">iPhone13 Pro Max</a></li>
-                    <li style="width: 149px;"><a href="#" class="liip">iPhone12 Pro Max</a></li>
-                    <li style="width: 149px;"><a href="#">iPhone11 Pro Max</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="textmenu"> Vivo <i class="fas fa-sort-down"></i></a>
-                <ul class="sup-menu">
-                    <li class="livv" style="width: 99px"><a href="#">Vivo Y17s</a></li>
-                    <li class="livv" style="width: 99px"><a href="#">Vivo Y22s</a></li>
-                    <li class="livv" style="width: 99px"><a href="#">Vivo V29 5G</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="textmenu"> OPPO <i class="fas fa-sort-down"></i></a>
-                <ul class="sup-menu">
-                    <li style="width: 99px;"><a href="#">OPPO Reno11</a></li>
-                    <li style="width: 99px;"><a href="#">OPPO A18</a></li>
-                    <li style="width: 99px;"><a href="#">OPPO Find N2</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="textmenu"> Samsung <i class="fas fa-sort-down"></i></a>
-                <ul class="sup-menu" style="width: 203px;">
-                    <li><a href="#">Samsung Galaxy S24 </a></li>
-                    <li><a href="#">Samsung Galaxy S23</a></li>
-                    <li><a href="#">Samsung Galaxy Z Fold5</a></li>
-                    <li><a href="#">Samsung Galaxy Z Fild5</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="textmenu"> Xiaomi <i class="fas fa-sort-down"></i></a>
-                <ul class="sup-menu" style="width: 200px;">
-                    <li><a href="#">Xiaomi 14</a></li>
-                    <li style="width: 250px;"><a href="#" style="width: 250px;">Xiaomi Redmi Note 13 Pro</a></li>
-                    <li><a href="#">Xiaomi 13T Pro</a></li>
-                    <li><a href="#">Xiaomi Redmi A2 series</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="textmenu"> Redmi <i class="fas fa-sort-down"></i></a>
-                <ul class="sup-menu">
-                    <li><a href="#" class="">Realmi Note 50</a></li>
-                    <li><a href="#" class="">Realmi C55</a></li>
-                    <li><a href="#" class="">Realmi 11</a></li>
-                    <li><a href="#" class="">Realmi C30s</a></li>
-                </ul>
-            </li>
-
-        </ul>
-    </div>
+    <!--Đoc nav-->
+    <script>Nav();</script>
+    <!--Đọc header-->
+    <script>Header();</script>
     <section>
         <div class="khungctsp">
             <div class="header-khung">
                 <ul class="breadcrumb">
-                    <li>
-                        <a href="#">Điện thoại</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/index.html">Trang chủ</a>
 
                     </li>
-                    <li>
-                        <a href="#">Điện thoại iPhone (Apple)</a>
+                    <span style="font-size: 30px;">›</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="tendienthoainav"></a>
 
                     </li>
                 </ul>
-                <h1 class="title-khung title">
-                    Điện thoại iPhone 15 Pro Max 256GB
+                <h1 class="title-khung title" id="tendienthoai" style="font-size: 20px;">
                 </h1>
             </div>
             <div class="khungctsp1">
@@ -140,13 +58,13 @@
 
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../img/dt1.png" alt="" class="mx-auto d-block" width="600px" height="400px">
+                                    <img src="" alt="" class="mx-auto d-block" width="750px" height="400px" id="hinh1">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../img/dt2.png" alt="" class="mx-auto d-block" width="600px" height="400px">>
+                                    <img src="" alt="" class="mx-auto d-block" width="750px" height="400px" id="hinh2">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../img/dt3.png" alt="" class="mx-auto d-block" width="600px" height="400px">>
+                                    <img src="" alt="" class="mx-auto d-block" width="750px" height="400px" id="hinh3">
                                 </div>
                             </div>
 
@@ -162,49 +80,49 @@
                         </div>
                     </div>
                     <div class="cauHinhSP">
-                        <h1 class="title-CH title">Cấu hình Điện thoại iPhone 15 Pro Max 256GB</h1>
+                        <h1 class="title-CH title">Thông tin cấu hình điện thoại</h1>
                         <table class="table table-striped mx-auto">
                             <tr>
                                 <td>Màn hình:</td>
-                                <td>
-                                    OLED6.7"Super Retina XDR</td>
+                                <td id="manhinh">
+                                    </td>
                             </tr>
                             <tr>
                                 <td>Hệ điều hành:</td>
-                                <td>iOS 17</td>
+                                <td id="hedieuhanh"></td>
                             </tr>
                             <tr>
                                 <td>Camera sau:</td>
-                                <td>Chính 48 MP & Phụ 12 MP, 12 MP</td>
+                                <td id="camerasau"></td>
                             </tr>
                             <tr>
                                 <td>Camera trước:</td>
-                                <td>12 MP</td>
+                                <td id="cameratruoc"></td>
                             </tr>
                             <tr>
                                 <td>Chip:</td>
-                                <td>
-                                    Apple A17 Pro 6 nhân</td>
+                                <td id="chip">
+                                    </td>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td>RAM:</td>
-                                <td>8 GB</td>
+                                <td id="ram"></td>
                             </tr>
                             <tr>
                                 <td>Dung lượng lưu trữ:</td>
-                                <td>256 GB</td>
+                                <td id="dungluong"></td>
                             </tr>
                             <tr>
                                 <td>SIM:</td>
-                                <td>1 Nano SIM & 1 eSIM, Hỗ trợ 5G</td>
+                                <td id="sim"></td>
                             </tr>
                             <tr>
                                 <td>Pin, Sạc:</td>
-                                <td>4422 mAh, 20 W</td>
+                                <td ip="pin"></td>
                             </tr>
                             <tr>
                                 <td>Hãng</td>
-                                <td>iPhone (Apple).</td>
+                                <td id="hang"></td>
                             </tr>
                         </table>
                     </div>
@@ -229,16 +147,16 @@
                             <li class="nav-item item1">
                                 <a class="nav-link gia1 active" data-bs-toggle="tab" href="#gia1">
                                     <p class="box-price-online">Giá bán đặc biệt tại một số siêu thị</p>
-                                    <p class="box-price-present"> 32.090.000&#x20AB; </p>
-                                    <p class="box-price-old">34.990.000&#x20AB;</p>
+                                    <p class="box-price-present" id="giast"> 32.090.000&#x20AB; </p>
+                                    <p class="box-price-old" id="giastgiam">34.990.000&#x20AB;</p>
                                     <p class="box-price-percent">-8%</p>
                                 </a>
                             </li>
                             <li class="nav-item item2">
                                 <a class="nav-link gia2" data-bs-toggle="tab" href="#gia2">
                                     <p class="box-price-online">Giá bán toàn quốc</p>
-                                    <p class="box-price-present">32.490.000&#x20AB; </p>
-                                    <p class="box-price-old">34.990.000&#x20AB;</p>
+                                    <p class="box-price-present" id="giatq">32.490.000&#x20AB; </p>
+                                    <p class="box-price-old" id="giatqgiam">34.990.000&#x20AB;</p>
                                     <p class="box-price-percent">-7%</p>
                                 </a>
                             </li>
@@ -386,13 +304,7 @@
                     </ul>
                 </div>
 
-                <p>iPhone 15 Pro Max thiết kế mới với chất liệu titan chuẩn hàng không vũ trụ bền bỉ,
-                    trọng lượng nhẹ, đồng thời trang bị nút Action và cổng sạc USB-C tiêu chuẩn giúp nâng cao tốc độ
-                    sạc.
-                    Khả năng chụp ảnh đỉnh cao của iPhone 15 bản Pro Max đến từ camera chính 48MP, camera UltraWide 12MP
-                    và camera telephoto có khả năng zoom quang học đến 5x. Bên cạnh đó, iPhone 15 ProMax sử dụng chip
-                    A17
-                    Pro mới mạnh mẽ.
+                <p id="thongtinsanpham">
                 </p>
             </div>
             <div class="danhGiaSP">
@@ -514,88 +426,37 @@
             </tr>
         </table>
     </footer>
-    <div class="modal" id="modallog">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background-color: rgba(0,0,0,0.5);">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-size: 25px; padding-top: 5px; color: #c4b22a">
-                        Đăng nhập
-                    </h5>
-                    <button class="btn btn-close btn-light" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <label for=""> Tên đăng nhập:</label>
-                        <span id="erruser" style="color: red;font-style: italic;"></span>
-                        <input type="text" name="" id="username" class="form-control">
-                        <label for="">Mật khẩu:</label>
-                        <input type="password" class="form-control" name="" id="">
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logintc">Đăng nhập</button>
-                    <button data-bs-dismiss="modal" class="btn btn-light">Đóng</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="modal" id="dangky">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background-color: rgba(0,0,0,0.5);">
-                <div class="modal-header">
-                    <h3 style="font-size: 25px; padding-top: 5px; color: #c4b22a;">
-                        Đăng ký
-                    </h3>
-                    <button class=" btn btn-light btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <div class="form-group">
-                            <label for="username">Tên người dùng:</label>
-                            <span id="erruser" style="color: red;font-style: italic;"></span>
-                            <input type="text" id="username" class="form-control"
-                                placeholder="Nhập tên người dùng(gồm chữ và số)">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="sdt">Số điện thoại:</label>
-                            <span id="errsdt" style="color: red;font-style: italic;"></span>
-                            <input type="tel" id="sdt" placeholder="Số điện thoại" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <span id="erremail" style="color: red;font-style: italic;"></span>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password"> Mật khẩu:</label>
-                            <span id="errpassword" style="color: red;font-style: italic;"></span>
-                            <input type="password" id="password" class="form-control"
-                                placeholder="Nhập mật khẩu (6-15 kí tự) chữ và số">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="againpassword">Nhập lại mật khẩu:</label>
-                            <span id="errepassagain" style="color: red;font-style: italic;"></span>
-                            <input type="password" id="againpassword" class="form-control"
-                                placeholder="Nhập lại mật khẩu">
-                        </div>
-                        <div class="form-group" style="margin-left: 300px;margin-top: 10px;">
-                            <input type="submit" class="btn btn-primary" onclick="dangky()" value="Đăng ký"></input>
-                            <button data-bs-dismiss="modal" class="btn btn-light">Đóng</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
+    <script>
+        $(document).ready(function() {
+            var product = JSON.parse(localStorage.getItem("product"));
+            if (product) {
+                // Cập nhật thông tin trên trang chi tiết sản phẩm
+                $("#tendienthoai").text(product["Tên sản phẩm"]);
+                $("#tendienthoainav").text(product["Tên sản phẩm"]);
+                $("#manhinh").text(product["Thông tin cấu hình"]["Màn hình"]);
+                $("#hedieuhanh").text(product["Thông tin cấu hình"]["Hệ điều hành"]);
+                $("#camerasau").text(product["Thông tin cấu hình"]["Camera sau"]);
+                $("#cameratruoc").text(product["Thông tin cấu hình"]["Camera trước"]);
+                $("#chip").text(product["Thông tin cấu hình"]["Chip"]);
+                $("#ram").text(product["Thông tin cấu hình"]["RAM"]);
+                $("#dungluong").text(product["Thông tin cấu hình"]["Dung lượng lưu trữ"]);
+                $("#sim").text(product["Thông tin cấu hình"]["SIM"]);
+                $("#pin").text(product["Thông tin cấu hình"]["Pin"]);
+                $("#hang").text(product["Thông tin cấu hình"]["Hàng"]);
+                $("#thongtinsanpham").text(product["Thông tin cấu hình"]["Thông tin sản phẩm"]);
+                $(".carousel-item").each(function(index) {
+                    $(this).find("img").attr("src", product["Mảng hình ảnh"][index]);
+                });
+                var giaBan = product["Giá bán"];
+                var giaBanDaFormat = giaBan.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }); //ĐỊnh dạng tiền tệ
+                $("#giastgiam").text(giaBanDaFormat);
+                $("#giatqgiam").text((giaBan + 1000000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+                $("#giast").text((giaBan - (giaBan * 0.08)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+                $("#giatq").text(((giaBan + 1000000)-((giaBan + 1000000) * 0.07)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+            }
+            localStorage.removeItem("product");
+    });
+    </script>
 </body>
 
 </html>
