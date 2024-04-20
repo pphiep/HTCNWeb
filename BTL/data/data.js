@@ -262,5 +262,93 @@
       "Hàng": "Oppo",
       "Thông tin sản phẩm": "Điện thoại Oppo Reno 7 128GB có màn hình AMOLED 6.3 inch, chip Snapdragon 765G, RAM 6GB, dung lượng lưu trữ 128GB, hệ điều hành ColorOS 10 (Android 10)..."
     }
+  },
+  {
+    "Tên sản phẩm": "Vivo X60 Pro",
+    "Mảng hình ảnh": [
+      "../img/vivo-x60-pro-1.png",
+      "../img/vivo-x60-pro-2.png",
+      "../img/vivo-x60-pro-3.png"
+    ],
+    "Giá bán": 17990000,
+    "Thông tin cấu hình": {
+      "Màn hình": "AMOLED 6.56 inch",
+      "Hệ điều hành": "Funtouch OS 11.1 (Android 11)",
+      "Camera trước": "32 MP",
+      "Camera sau": "Chính 48 MP & Phụ 13 MP, 13 MP",
+      "Chip": "Exynos 1080",
+      "RAM": "12 GB",
+      "Dung lượng lưu trữ": "256 GB",
+      "SIM": "Dual SIM (Nano-SIM, dual stand-by)",
+      "Pin": "4200 mAh",
+      "Hàng": "Vivo",
+      "Thông tin sản phẩm": "Điện thoại Vivo X60 Pro 256GB có màn hình AMOLED 6.56 inch, chip Exynos 1080, RAM 12GB, dung lượng lưu trữ 256GB, hệ điều hành Funtouch OS 11.1 (Android 11)..."
+    }
+  },
+  {
+    "Tên sản phẩm": "Xiaomi Redmi Note 11",
+    "Mảng hình ảnh": [
+      "../img/xiaomi-redmi-note11-1.png",
+      "../img/xiaomi-redmi-note11-2.png",
+      "../img/xiaomi-redmi-note11-3.png"
+    ],
+    "Giá bán": 4290000,
+    "Thông tin cấu hình": {
+      "Màn hình": "IPS LCD 6.43 inch",
+      "Hệ điều hành": "MIUI 12.5 (Android 11)",
+      "Camera trước": "13 MP",
+      "Camera sau": "Chính 50 MP & Phụ 8 MP, 2 MP",
+      "Chip": "MediaTek Helio G88",
+      "RAM": "4 GB",
+      "Dung lượng lưu trữ": "128 GB",
+      "SIM": "Dual SIM (Nano-SIM, dual stand-by)",
+      "Pin": "5000 mAh",
+      "Hàng": "Xiaomi",
+      "Thông tin sản phẩm": "Điện thoại Xiaomi Redmi Note 11 128GB có màn hình IPS LCD 6.43 inch, chip MediaTek Helio G88, RAM 4GB, dung lượng lưu trữ 128GB, hệ điều hành MIUI 12.5 (Android 11)..."
+    }
+  },
+  {
+    "Tên sản phẩm": "Xiaomi Mi 11T",
+    "Mảng hình ảnh": [
+      "../img/xiaomi-mi11t-1.png",
+      "../img/xiaomi-mi11t-2.png",
+      "../img/xiaomi-mi11t-3.png"
+    ],
+    "Giá bán": 11990000,
+    "Thông tin cấu hình": {
+      "Màn hình": "IPS LCD 6.67 inch",
+      "Hệ điều hành": "MIUI 13 (Android 12)",
+      "Camera trước": "16 MP",
+      "Camera sau": "Chính 108 MP & Phụ 8 MP, 5 MP",
+      "Chip": "MediaTek Dimensity 1200",
+      "RAM": "8 GB",
+      "Dung lượng lưu trữ": "256 GB",
+      "SIM": "Dual SIM (Nano-SIM, dual stand-by)",
+      "Pin": "5000 mAh",
+      "Hàng": "Xiaomi",
+      "Thông tin sản phẩm": "Điện thoại Xiaomi Mi 11T 256GB có màn hình IPS LCD 6.67 inch, chip MediaTek Dimensity 1200, RAM 8GB, dung lượng lưu trữ 256GB, hệ điều hành MIUI 13 (Android 12)..."
+    }
+  },
+  {
+    "Tên sản phẩm": "Redmi Note 11S",
+    "Mảng hình ảnh": [
+      "../img/redmi-note11s-1.png",
+      "../img/redmi-note11s-2.png",
+      "../img/redmi-note11s-3.png"
+    ],
+    "Giá bán": 5590000,
+    "Thông tin cấu hình": {
+      "Màn hình": "IPS LCD 6.43 inch",
+      "Hệ điều hành": "MIUI 13 (Android 12)",
+      "Camera trước": "16 MP",
+      "Camera sau": "Chính 108 MP & Phụ 8 MP, 2 MP",
+      "Chip": "MediaTek Helio G96",
+      "RAM": "6 GB",
+      "Dung lượng lưu trữ": "128 GB",
+      "SIM": "Dual SIM (Nano-SIM, dual stand-by)",
+      "Pin": "5000 mAh",
+      "Hàng": "Redmi",
+      "Thông tin sản phẩm": "Điện thoại Redmi Note 11S 128GB có màn hình IPS LCD 6.43 inch, chip MediaTek Helio G96, RAM 6GB, dung lượng lưu trữ 128GB, hệ điều hành MIUI 13 (Android 12)..."
+    }
   }
 ]

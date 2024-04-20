@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!-- <script src="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script> -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="../css/hoso1.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+    <script src="http://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+        <script src="../js/index.js"></script>
+    <style>
+
+        .profile-picture {
+            margin-left: -30px;
+            width: 150px; /* Đặt kích thước cho hình ảnh */
+            height: 150px;
+            border-radius: 50%; /* Tạo hình tròn */
+            overflow: hidden; /* Ẩn phần ngoài vùng hình tròn */
+        }
+
+        .profile-picture img {
+            width: 150px; /* Đảm bảo hình ảnh lấp đầy toàn bộ khu vực */
+            height: 150px;
+        }
+
+    a{
+        text-decoration: none;
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btn_luu").click(function(e){
+                e.preventDefault();
+                var hoTen = $("#hoTen").val();
+                // hoTen.style.width="100px";
+                var sdt = $("#sdt").val();
+                var ngaySinh = $("#ngaySinh").val();
+                var ns= ngaySinh.split('-');
+                var ngayS= ns[2] +'/'+ns[1] +'/'+ ns[0];
+                var file = document.getElementById('file');
+                var currentScrollPosition = $(window).scrollTop(); // Lưu trữ vị trí cuộn hiện tại của trang
+                if(hoTen && sdt && ngaySinh && file.files && file.files[0]){
+                    var reader = new FileReader();
+            
+                    reader.onload = function(event) {
+                        var fileContent = event.target.result;
+                        var newRow1 = "<tr><td></td><td><div class='profile-picture'><img src='" + fileContent + "' alt='Ảnh đại diện'></div></td></tr>";
+                        var newRow2 = "<tr class='wide-column'><td >Họ tên</td><td>" + hoTen + "</td></tr>";
+                        var newRow3 = "<tr><td>Ngày sinh</td><td>" + ngayS + "</td></tr>";
+                        var newRow4 = "<tr><td>Số điện thoại</td><td>" + sdt + "</td></tr>";
+                        $("#add_row").empty(); // Xóa bỏ nội dung hiện tại của phần tử tbody
+                        $("#add_row").append(newRow1); // Thêm hàng chứa ảnh
+                        $("#add_row").append(newRow2); // Thêm hàng chứa họ tên
+                        $("#add_row").append(newRow3); // Thêm hàng chứa ngày sinh
+                        $("#add_row").append(newRow4); // Thêm hàng chứa số điện thoại
+                        $(window).scrollTop(0); // Cuộn thanh lên đầu trang
+            
+                    };
+            
+                    reader.readAsDataURL(file.files[0]);
+                }
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="../css/stype.css">
+</head>
+<body>
+    <div class="container-">
+        <header>
+            <img src="../img/blackFriday.gif" alt="">
+        </header>
+        <nav>
+           <div class="container">
+            <ul>
+                <li style="height: 50px;"><a href="../html/index.html" style="line-height: 50px;">XShop</a></li>
+                <li><a  data-bs-target="#diadiem" data-bs-toggle="modal" href="" style="text-decoration: none;"><p style="color: white; font-size: 10px; text-decoration: none; padding-top: 15px;">Xem giá, khuyến mãi tại <br> <span style="font-size: 10px;" id="Diemmuadt">Hồ Chí Minh...</span><i class="fas fa-sort-down"></i> </p></a></li>
+                <li> <a href="# "><input type="text" class="search input" placeholder="Tìm kiếm...." style="padding-left: 6px;"> <i class="fas fa-search"></a></i></li>
+                <li><button><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
+                <li class="khungnav"><a href="../html/index.html" class="textnone">Trang Chủ</a></li>
+                <li class="khungnav"><a href="#" class="textnone">Giới thiệu</a></li>
+                <li class="khungnav"><a href="#" class="textnone">Liên hệ</a></li>
+                <li class="khungnav" style=" width: 100px;"><a href="#" class="textnone"  data-bs-toggle="modal" data-bs-target="#modallog"><span class="fas fa-user-alt fa-1.4x" style="margin-right: 3px;"></span>Đăng nhập</a></li>
+                <li class="khungnav"><a href="#" class="textnone"  data-bs-toggle="modal" data-bs-target="#dangki"> Đăng ký</a></li>
+                
+            </ul>
+           </div>
+        </nav>
+        <div class="row" style="margin: 0; margin-left: 130px;">
+            <div class="col-lg-8 center">
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="username"><h1>HỒ SƠ</h1></label>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Tên</label>
+                        <input type="text" class="form-control" id="hoTen" required placeholder="Tên người dùng">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sdt">Số điện thoại</label>
+                        <input type="text" class="form-control" id="sdt" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                            <label class="form-check-label" for="male">Nam</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Nữ</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ngaySinh">Ngày sinh</label>
+                        <input type="date" class="form-control" id="ngaySinh" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="file">Ảnh đại diện</label>
+                        <input type="file" class="form-control" id="file" accept=".img , .jpg">
+                        <small class="form-text text-muted">Vui lòng tải lên ảnh đại diện của bạn.</small>
+                    </div>
+                    <button type="submit" id="btn_luu" class="btn btn-primary">Lưu hồ sơ</button>
+                </form>
+            </div>
+            <div class="col-lg-2 right" style="margin-left: 30px;">
+                <div class="row">
+                    <table class="table">
+                        <tbody id="add_row" style="width: 200px;">
+                            <tr>
+                                <td><i class='fas fa-user-alt fa-8x'></i></td>
+                            </tr>
+                            <tr>
+                                <td>Tên đăng nhập</td>
+                                <td><span id="tenDN"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Số điện thoại</td>
+                                <td><span id="sdt"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><span id="email"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <script>Footer();</script>
+
+    </div>
+    <script src="script.js"></script>
+        <!-- js footer -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var xemThemLink = document.getElementById("xem-them");
+                var menuList = document.getElementById("menu-list");
+                var isExpanded = false;
+        
+                function addNewItems() {
+                    var newItemsContent = [
+                        "Chính sách xử lý dữ liệu cá nhân",
+                        "Quy chế hoạt động",
+                        "Chất lượng phục vụ",
+                        "Cảnh báo giả mạo",
+                        "Hướng dẫn mua online",
+                        "Chính sách xử lý dữ liệu cá nhân1",
+                        "Quy chế hoạt động1",
+                        "Chất lượng phục vụ1",
+                        "Cảnh báo giả mạo1",
+                        "Hướng dẫn mua online1",
+                    ];
+        
+                    var i = 0;
+                    var interval = setInterval(function() {
+                        if (i >= newItemsContent.length) {
+                            clearInterval(interval);
+                            // Hiển thị nút "Ẩn bớt" và di chuyển nó xuống dưới cùng
+                            var anBotLink = document.createElement("li");
+                            anBotLink.className = "footer-list-link";
+                            anBotLink.id = "an-bot";
+                            anBotLink.innerHTML = "<a class='footer-text-link' href='#'>Ẩn bớt<span class='rotate-up'>▲</span></a>";
+                            menuList.appendChild(anBotLink);
+        
+                            // Thêm sự kiện cho nút "Ẩn bớt"
+                            anBotLink.querySelector("a").addEventListener("click", function(event) {
+                                event.preventDefault();
+                                isExpanded = false;
+                                removeNewItems();
+                                menuList.removeChild(anBotLink);
+                                xemThemLink.style.display = "block";
+                            });
+                        } else {
+                            var newListItem = document.createElement("li");
+                            newListItem.className = "footer-list-link added-item";
+                            newListItem.innerHTML = "<a class='footer-text-link' href='#'>" + newItemsContent[i] + "</a>";
+                            menuList.appendChild(newListItem);
+                            i++;
+                        }
+                    }, 7);
+                }
+        
+                function removeNewItems() {
+                    var addedItems = document.querySelectorAll(".added-item");
+                    var i = addedItems.length - 1;
+                    var interval = setInterval(function() {
+                        if (i < 0) {
+                            clearInterval(interval);
+                        } else {
+                            menuList.removeChild(addedItems[i]);
+                            i--;
+                        }
+                    }, 7);
+                }
+        
+                xemThemLink.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    if (!isExpanded) {
+                        addNewItems();
+                        xemThemLink.style.display = "none";
+                        isExpanded = true;
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

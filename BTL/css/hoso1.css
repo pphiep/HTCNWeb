@@ -1,0 +1,354 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif;
+ }
+ /* header{
+     text-align: center;
+ } */
+ ul{
+     list-style: none;
+ }
+ li>a{
+     text-decoration: none;
+ }
+ 
+ .container{
+     max-width: 1000px;
+     margin: auto;
+ }
+ header img{
+     width: 100%;
+ }
+ /* ...............Nav....................... */
+ nav{
+     width: 100%;
+     background: #000;
+     /* margin-top: -4px; */
+     height: 55px;
+ }
+ nav ul{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     /* border: 1px solid red; */
+     width: 1050px;
+     margin-left: -50px;
+     margin-top: -9px;
+ }
+ nav ul li, a{
+     font-size: 13px;
+     /* line-height: 40px; */
+ }
+ 
+ /* nav ul li{
+     border: 1px solid red;
+     height: 46px;
+     margin-top: 7px;
+ } */
+ 
+ 
+ nav ul li:nth-child(1) a{
+     font-size: 40px;
+     margin-left: -30px;
+     color: white;
+     text-decoration: none;
+ }
+ nav ul li:nth-child(2) span:hover{
+     color: #FFF200;
+ }
+ nav ul li:nth-child(2) i{
+     color: #FFF200;
+     font-size: 15px;
+ }
+ 
+ nav ul li:nth-child(3) input{
+     width: 160px;
+     height: 30px;
+     border-radius: 5px;
+     border: none;
+     outline: none;
+ }
+ nav ul li:nth-child(3) i{
+     position: absolute;
+     font-size: 17px;
+     margin-left: -25px;
+     color: black;
+     line-height: 30px;
+ }
+ nav ul li:nth-child(4) button{
+     height: 30px;
+     padding: 0 12px;
+     cursor: pointer;
+     background-color: transparent;
+     color: white;
+     border: 1px solid #3f3f3f;
+     border-radius: 5px;
+ }
+ 
+ 
+ .khungnav{
+     /* border: 1px solid red; */
+     height: 46px;
+     line-height: 46px;
+     width: 80px;
+     text-align: center; 
+     /* margin-top: -5px; */
+ }
+ 
+ .khungnav:hover{
+     background: white;
+ }
+ 
+ .khungnav:hover >a{
+     color: black;
+     font-weight: bold;
+     /* font-size: 14px; */
+ }
+ 
+ nav ul li:nth-child(4) button:hover {
+     background: #575757;
+ }
+ .textnone{
+     text-decoration: none;
+     color: white;
+     /* border: 1px solid red; */
+     font-size: 14px;
+     margin-top: 10px;
+     /* line-height: 46px; */
+ }
+ 
+ 
+ .modal-content{
+     box-shadow: 0px 0px 15px 2px rgba(255,255,255,0.5);
+     color: white;
+ }
+ /* ..................menu.......................... */
+ .menu{
+     display: flex;
+     width: 100%;
+     background: #FFF200;
+     justify-content: center;
+     height: 40px;
+     border-top: 1px solid rgb(77, 76, 76);
+     text-align: center;
+     margin-top: -16px;
+     /* border: 1px solid red; */
+ }
+ 
+ .main-menu{
+     width: 1000px;
+     margin-top: 30px;
+     display: flex;
+     margin: 0;
+     padding: 0;
+     justify-content: space-between;
+     align-items: cente
+     
+ }
+ 
+ .main-menu li >a{
+     line-height: 40px;
+     color: black;
+     position: relative;
+     display: block;
+     width: 106px;
+     /* border: 1px solid red; */
+     height: 40px;
+ }
+ 
+ .main-menu>li>a:hover{
+     background: black;
+     color: white;
+ }
+ 
+ 
+ .textmenu{
+     font-size: 20px;
+     /* font-weight: bold; */
+ }
+ 
+ .main-menu ul.sup-menu{
+     margin-top: px;
+     border: 1px solid rgb(195, 188, 188);
+     position: absolute;
+     width: 100px;
+     position: absolute;
+     background: #f6ea07;
+     list-style: none;
+     /* border-radius: 5px; */
+     display: none;
+ }
+ .main-menu li:hover>ul.sup-menu{
+     display: block;
+ 
+ }
+ 
+ .main-menu ul.sup-menu a{
+     /* border: 1px solid red; */
+     text-align: left;
+     width: 160px;
+     color: black;
+     margin-bottom: 2px;
+     padding:5px;
+     left: 0;
+     height: 40px;
+ }
+ 
+ 
+ .main-menu li:hover{
+     border-bottom: 1px solid white;
+ }
+ 
+ 
+ .main-menu ul.sup-menu li{
+     width: 200px;
+     margin-left: -32px;    
+ }
+ 
+ 
+ 
+ .main-menu ul.sup-menu li:last-child a{
+     border: none;
+ }
+ 
+ .main-menu ul.sup-menu ul.sup-menu{
+     left: 151px;
+     top: 41px;
+ }
+ .main-menu ul.sup-menu ul.sup-menu li:last-child a{
+     border: none;
+     
+ }
+ /* ------------------------------------------- */
+body {
+    background-color: #f8f9fa;
+}
+/* Định dạng cho form */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Định dạng cho nút lưu */
+.btn-primary {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.row{
+    background-color: #f8f9fa;
+}
+/* .................footer...................... */
+footer{
+    width: 100%;
+    border-top: 1px solid rgb(230, 226, 226);
+    clear: both;
+    position: relative;
+}
+.footer-title{
+    clear: both;
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.footer-top{
+    margin: auto;
+    display: flex;
+    width: 80%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer-col{
+    width: 25%;
+}
+.footer-text-contact{
+    color: #2f80ed;
+    font-weight: bold;
+}
+.footer-menu{
+    padding: 0;
+    list-style: none;
+}
+.footer-text-link{
+    color: black;
+    font-size: 10px;
+}
+.footer-list-link{
+    margin-bottom: 2px;
+    margin-left: 5px;
+    text-align: left;
+}
+.footer-text-contact{
+    text-align:left;
+    margin-top: 1.5px;
+    font-size: 8px;
+}
+.footer-text-call{
+    margin-right: 2px;
+    font-size: 10px;
+}
+.footer-list-contact{
+    display: flex;
+    height: 30px;
+    margin-left: 5px;
+}
+.footer-list-logo{
+    display: inline-block;
+    width: 18%;
+    margin-bottom: 5px;
+    padding: 0;
+}
+.footer-img-logo{
+    
+    width: 90%;
+}
+.footer-list-avarta{
+    display: inline-block;
+    width: 21%;
+    margin-bottom: 5px;
+    float: left;
+    margin-right: 9px;
+    
+}
+.footer-avarta-member{
+    width: 100%;
+    vertical-align: top;
+    height: 30px;
+}
+.footer-list-avartapay{
+    display: inline-block;
+    width: 20%;
+    margin-bottom: 5px;
+    float: left;
+}
+
+.footer-avarta-pay{
+    width: 80%;
+}
+.footer-bot{
+    clear: both;
+    text-align: center;
+    padding-top: 10px;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: #020109;
+    font-weight: bold;
+    margin: auto;
+}
+.rotate-up {
+    transform: rotate(180deg);
+}

@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thế Giới Di Động</title>
-    <script src="http://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/infoProduct.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.5.1-web/css/all.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <script src="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/chuyenanh.js"></script>
-    <script src="../js/dangky.js"></script>
     <script src="../js/index.js"></script>
 </head>
 
@@ -33,7 +31,7 @@
                         <a class="nav-link" href="../html/index.html">Trang chủ</a>
 
                     </li>
-                    <span style="font-size: 30px;">›</span>
+                    <span style="font-size: 20px;">›</span>
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="tendienthoainav"></a>
 
@@ -118,7 +116,7 @@
                             </tr>
                             <tr>
                                 <td>Pin, Sạc:</td>
-                                <td ip="pin"></td>
+                                <td id="pin"></td>
                             </tr>
                             <tr>
                                 <td>Hãng</td>
@@ -147,16 +145,16 @@
                             <li class="nav-item item1">
                                 <a class="nav-link gia1 active" data-bs-toggle="tab" href="#gia1">
                                     <p class="box-price-online">Giá bán đặc biệt tại một số siêu thị</p>
-                                    <p class="box-price-present" id="giast"> 32.090.000&#x20AB; </p>
-                                    <p class="box-price-old" id="giastgiam">34.990.000&#x20AB;</p>
+                                    <p class="box-price-present" id="giast"></p>
+                                    <p class="box-price-old" id="giastgiam">&#x20AB;</p>
                                     <p class="box-price-percent">-8%</p>
                                 </a>
                             </li>
                             <li class="nav-item item2">
                                 <a class="nav-link gia2" data-bs-toggle="tab" href="#gia2">
                                     <p class="box-price-online">Giá bán toàn quốc</p>
-                                    <p class="box-price-present" id="giatq">32.490.000&#x20AB; </p>
-                                    <p class="box-price-old" id="giatqgiam">34.990.000&#x20AB;</p>
+                                    <p class="box-price-present" id="giatq"></p>
+                                    <p class="box-price-old" id="giatqgiam">&#x20AB;</p>
                                     <p class="box-price-percent">-7%</p>
                                 </a>
                             </li>
@@ -210,12 +208,9 @@
                                     </div>
                                 </div>
                                 <div class="button-mua">
-                                    <div class="row1 d-grid">
-                                        <button type="button" class="btn">MUA NGAY</button>
-                                    </div>
-                                    <div class="row2 ">
-                                        <button type="button" class="btn btn1">MUA TRẢ GÓP 0%</button>
-                                        <button type="button" class="btn btn2">TRẢ GÓP 0% QUA THẺ</button>
+                                    <div class="row2">
+                                        <button type="button" class="btn btn1" style="background-color: rgb(255, 94, 36);" data-bs-toggle="modal" data-bs-target="#dathang">Mua ngay</button>
+                                        <button type="button" class="btn btn2" onclick="themGioHang('st');"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
                                     </div>
                                 </div>
                                 <div class="discount">
@@ -256,12 +251,9 @@
                                     </div>
                                 </div>
                                 <div class="button-mua">
-                                    <div class="row1 d-grid">
-                                        <button type="button" class="btn">MUA NGAY</button>
-                                    </div>
                                     <div class="row2">
-                                        <button type="button" class="btn btn1">MUA TRẢ GÓP 0%</button>
-                                        <button type="button" class="btn btn2">TRẢ GÓP 0% QUA THẺ</button>
+                                        <button type="button" class="btn btn1" style="background-color: rgb(255, 94, 36);" data-bs-toggle="modal" data-bs-target="#dathang">Mua ngay</button>
+                                        <button type="button" class="btn btn2" onclick="themGioHang('tq');"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
                                     </div>
                                 </div>
                                 <div class="discount">
@@ -291,19 +283,6 @@
                 <h1 class="title-thongTinSP title">
                     Thông tin sản phẩm
                 </h1>
-                <div class="noibat">
-                    <p>ĐẶC ĐIỂM NỔI BẬT</p>
-                    <ul>
-                        <li>Thiết kế khung viền từ titan chuẩn hàng không vũ trụ - Cực nhẹ, bền cùng viền cạnh mỏng cầm
-                            nắm thoải mái</li>
-                        <li>Hiệu năng Pro chiến game thả ga - Chip A17 Pro mang lại hiệu năng đồ họa vô cùng sống động
-                            và chân thực</li>
-                        <li>Thoả sức sáng tạo và quay phim chuyên nghiệp - Cụm 3 camera sau đến 48MP và nhiều chế độ
-                            tiên tiến</li>
-                        <li>Nút tác vụ mới giúp nhanh chóng kích hoạt tính năng yêu thích của bạn</li>
-                    </ul>
-                </div>
-
                 <p id="thongtinsanpham">
                 </p>
             </div>
@@ -398,34 +377,65 @@
                 </div>
             </div>
         </div>
-
+    
+        <!--Modal đặt ngay-->
+        <div class="modal" id="dathang">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="color: black;">
+                    <div class="modal-header">
+                        <h2>Thông tin khách hàng</h2>
+                        <button type="button" class="closemodal" data-bs-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group"><input type="text" class="form-control mt-3 mb-4" placeholder="Họ tên" id="txthoten"></div>
+                            <span style="color: red;" id="errhoten"></span>
+                            <div class="row form-group mt-3 mb-4">
+                            <div class="col-6">
+                                <input type="text" class="form-control" placeholder="Số điện thoại" id="txtsodienthoai">
+                                <span style="color: red;" id="errsdt"></span>
+                                </div>
+                            <div class="col-6">
+                                <select name="gt" class="form-select">
+                                <option value="value1" selected="selected">Chọn giới tính</option>
+                                <option value="value2">Nam</option>
+                                <option value="value3">Nữ</option>
+                                </select>
+                                <span style="color: red;" id="errgt"></span>
+                            </div>
+                            </div>
+                            <div class="form-group mt-3 mb-4"><input type="email" class="form-control" placeholder="Email"></div>
+                            <span style="color: red;" id="erremail"></span>
+                            <div class="row form-group mt-3 mb-4">
+                            <div class="col-6">
+                                <select name="tp" class="form-select" id="thanhpho">
+                                <option value="" selected="selected">Chọn thành phố</option>
+                                <option value="Thành phố Hồ Chí Minh" >Thành phố Hồ Chí Minh</option>
+                                <option value="Thành phố Hà Nội" >Thành phố Hà Nội</option>
+                                <option value="Tân An" >Tân An</option>
+                                <option value="Thành phố Đà Nẵng" >Thành phố Đà Nẵng</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <select name="Quan" class="form-select" id="quan" disabled>
+                                
+                                </select>
+                            </div>
+                            </div>
+                            <div class="form-group"><input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiachi"></div>
+                            <span style="color: red;" id="errdiachi"></span>
+                            <div class="form-group">Tôi đã đọc và đồng ý với <span style="color: orange; font-weight: bold;">CHÍNH SÁCH</span> của cửa hàng</div>
+                    </div>
+                    <div class="modal-footer" style="display: flex; flex-direction: row;">
+                        <input type="submit" type="button" class="btn btn-primary" value="Xác nhận"></input>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer class="bg-dark">
-        <table>
-            <tr>
-                <td style="width: 300px;height: 50px;"><a href="#">Tích điểm Quà tặng VIP</a></td>
-                <td style="width: 300px;"><a href="#">Giới thiej côn ty(WWW.vn)</a></td>
-                <td style="width: 300px;"><b>Tổng đài hỗ trợ</b></td>
-            </tr>
-            <tr>
-                <td><a href="#">Lịch sử mua hàng</a></td>
-                <td><a href="#">Tuyển dụng</a></td>
-                <td>Gọi mua: <a href="tel:+84393465113" class="linkxanh">0393465113</a></td>
-            </tr>
-            <tr>
-                <td style="height: 50px;"><a href="#">Tím hiểu về mua trả góp</a></td>
-                <td><a href="#">Gửi góp ý, khiếu nại</a></td>
-                <td>Khiếu nại: <a href="tel:+84393465113" class="linkxanh">0393465113</a></td>
-            </tr>
-            <tr>
-                <td><a href="#">Chính sách bảo hành</a></td>
-                <td><a href="#">Tìm siêu thị</a></td>
-                <td>Bảo hành: <a href="mailto: tranngochung19112004@gmail.com"
-                        class="linkxanh">tranngochung19112004@gmail.com</a></td>
-            </tr>
-        </table>
-    </footer>
+   <script>Footer();</script>
     <script>
         $(document).ready(function() {
             var product = JSON.parse(localStorage.getItem("product"));
@@ -453,10 +463,103 @@
                 $("#giatqgiam").text((giaBan + 1000000).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
                 $("#giast").text((giaBan - (giaBan * 0.08)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
                 $("#giatq").text(((giaBan + 1000000)-((giaBan + 1000000) * 0.07)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
+                document.title = product["Tên sản phẩm"];
             }
             localStorage.removeItem("product");
     });
+    function themGioHang(phienban){
+        let tensanpham = $('#tendienthoai').html();
+        let gias = 0;
+        if(phienban === "tq"){
+           gias = $("#giatq").html();
+        } else{
+           gias = $("#giast").html();
+        }
+        let gia = gias.replace(/(&nbsp;|₫)/g, "");
+        
+        let product = {
+            tensanpham: tensanpham,
+            gia: gia
+        };
+        // Kiểm tra xem mảng sản phẩm đã tồn tại trong localStorage chưa
+        let cartItems = JSON.parse(localStorage.getItem('cartItems'));
+
+        // Nếu mảng chưa tồn tại, tạo một mảng mới
+        if (!cartItems) {
+            cartItems = [];
+        } 
+
+        // Thêm sản phẩm mới vào mảng
+        cartItems.push(product);
+
+        // Lưu mảng sản phẩm vào localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        alert("Đã thêm vào giỏ hàng!");
+    }
     </script>
+    <script>
+        $(document).ready(function () {
+          $("#thanhpho").change(function (e) { 
+            let tp = $("#thanhpho").val();
+            if(tp != ""){
+                $("#quan").empty();
+                $("#quan").attr("disabled", false);
+                let text = "";
+                if(tp === "Thành phố Hồ Chí Minh"){
+                  text = "<option value=" + "Quận 1" +">Quận 1</option>"
+                                + "<option value=" + "Quận 2" +">Quận 2</option>"
+                                + "<option value=" + "Quận 3" +">Quận 3</option>"
+                                + "<option value=" + "Quận 4" +">Quận 4</option>"
+                                + "<option value=" + "Quận 5" +">Quận 5</option>"
+                                + "<option value=" + "Quận 6" +">Quận 6</option>"
+                                + "<option value=" + "Quận 7" +">Quận 7</option>"
+                                + "<option value=" + "Quận 8" +">Quận 8</option>"
+                                + "<option value=" + "Quận 9" +">Quận 9</option>"
+                                + "<option value=" + "Quận 10" +">Quận 10</option>"
+                                + "<option value=" + "Quận 11" +">Quận 11</option>"
+                                + "<option value=" + "Quận 12" +">Quận 12</option>"
+                                + "<option value=" + "Gò Vấp" +">Gò Vấp</option>"
+                                + "<option value=" + "Tân Bình" +">Tân Bình</option>";
+                }
+                if(tp == "Thành phố Hà Nội"){
+                  text = "<option value=" + "Ba Đình" +">Ba Đình</option>"
+                                + "<option value=" + "Cầu Giấy" +">Cầu Giấy</option>"
+                                + "<option value=" + "Đống Đa" +">Đống Đa</option>"
+                                + "<option value=" + "Hai Bà Trưng" +">Hai Bà Trưng</option>"
+                                + "<option value=" + "Hoàn Kiếm" +">Hoàn Kiếm</option>"
+                                + "<option value=" + "Thanh Xuân" +">Thanh Xuân</option>"
+                                + "<option value=" + "Hoàng Mai" +">Hoàng Mai</option>";
+                                + "<option value=" + "Long Biên" +">Long Biên</option>";
+                                + "<option value=" + "Hà Đông" +">Hà Đông</option>";
+                                + "<option value=" + "Tây Hồ" +">Tây Hồ</option>";
+                                + "<option value=" + "Nam Từ Liêm" +">Nam Từ Liêm</option>";
+                                + "<option value=" + "Bắc Từ Liêm" +">Bắc Từ Liêm</option>";
+                }
+                if(tp == "Tân An"){
+                  text = "<option value=" + "Phường 1" +">Phường 1</option>"
+                                + "<option value=" + "Phường 2" +">Phường 2</option>"
+                                + "<option value=" + "Phường 3" +">Phường 3</option>"
+                                + "<option value=" + "Phường 4" +">Phường 4</option>"
+                                + "<option value=" + "Phường 5" +">Phường 5</option>"
+                                + "<option value=" + "Phường 6" +">Phường 6</option>"
+                                + "<option value=" + "Phường 7" +">Phường 7</option>"
+                                + "<option value=" + "Khánh Hậu" +">Khánh Hậu</option>"
+                                + "<option value=" + "Tân Khánh" +">Tân Khánh</option>";
+                }
+                if(tp == "Thành phố Đà Nẵng"){
+                  text = "<option value=" + "Hải Châu" +">Hải Châu</option>"
+                                + "<option value=" + "Thanh Khê" +">Thanh Khê</option>"
+                                + "<option value=" + "Sơn Trà" +">Sơn Trà</option>"
+                                + "<option value=" + "Ngũ hành sơn" +">Ngũ Hành Sơn</option>"
+                                + "<option value=" + "Liên Chiểu" +">Liên Chiểu</option>"
+                                + "<option value=" + "Cẩm Lệ" +">Cẩm Lệ</option>";
+                }
+                $("#quan").append(text);
+              }
+          });
+        });
+      </script>
 </body>
 
 </html>

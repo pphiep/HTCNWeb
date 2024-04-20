@@ -1,42 +1,23 @@
 // Thêm nav vào trang
 function Nav() {
     document.write(`   
-	<nav class="nav justify-content-center">
-        <ul class="nav">
-            <li class="nav-item" ><a href="../html/index.html" class="textnone">XShop</a></li>
-            <li class="nav-item"><a  data-bs-target="#diadiem" data-bs-toggle="modal" href="" style="text-decoration: none;"><p style="color: white; font-size: 10px; text-decoration: none; padding-top: 15px;">Xem giá, khuyến mãi tại <br> <span style="font-size: 10px;" id="Diemmuadt">Hồ Chí Minh...</span><i class="fas fa-sort-down"></i> </p></a></li>
-            <div class="search-header nav-item" style="position: relative; left: 10px; top: 1px;">
-                <form method="get" action="index.html">
-                    <div class="input-group">
-                        <input id="search-box" style="border: none;" name="search" autocomplete="off" type="text" placeholder="Nhập từ khóa tìm kiếm">
-                        <button type="submit" style="width: 40px; border: none;">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <li class="nav-item"><a href="../html/index.html" class="textnone">Trang Chủ</a></li>
-            <li class="nav-item"><a href="#" class="textnone">Bảo hành</a></li>
-            <!--<li class="nav-item"><a href="#" class="textnone">Tuyển dụng</a></li>-->
-            <li class="nav-item"><a href="#" class="textnone">Giới thiệu</a></li>
-            <li class="nav-item" ><a href="#" class="textnone">Liên hệ</a></li> 
-			<div >
-				<a href="#" class="nav-link" style="color: white;">
-					<i class="fa fa-user"></i>
-					Tài khoản
-				</a>
-			</div>
-            <li class="nav-item" style="color: white;">
-                <div class="cart">
-                    <a href="giohang.html" style="color: white;">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span>Giỏ hàng</span>
-                        <span class="cart-number"></span>
-                    </a>
-                </div> 
-            </li>  
+	<nav>
+       <div class="container">
+        <ul>
+            <li style="height: 50px;"><a href="../html/index.html" style="line-height: 50px;">XShop</a></li>
+            <li><a  data-bs-target="#diadiem" data-bs-toggle="modal" href="" style="text-decoration: none;"><p style="color: white; font-size: 10px; text-decoration: none; padding-top: 15px;">Xem giá, khuyến mãi tại <br> <span style="font-size: 10px;" id="Diemmuadt">Hồ Chí Minh...</span><i class="fas fa-sort-down"></i> </p></a></li>
+            <li> <a href="# "><input type="text" class="search input" placeholder="Tìm kiếm...." style="padding-left: 6px;"> <i class="fas fa-search"></a></i></li>
+            <li><button onclick="window.open('../html/giohang.html');"><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
+            <li class="khungnav"><a href="../html/index.html" class="textnone">Trang Chủ</a></li>
+            <li class="khungnav"><a href="../html/GioiThieu.html" class="textnone">Giới thiệu</a></li>
+            <li class="khungnav"><a href="../html/LienHe.html" class="textnone">Liên hệ</a></li>
+            <li class="khungnav" style=" width: 100px;"><a href="#" class="textnone" id="linktt" data-bs-toggle="modal" data-bs-target="#modallog"><span href="#" class="fas fa-user-alt fa-1.4x" style="margin-right: 3px; display: none;" id="anhdn"></span><span id="logtext">Đăng nhập</span></a></li>
+            <li class="khungnav"><a href="#" class="textnone"  data-bs-toggle="modal" data-bs-target="#modalId"> Đăng ký</a></li>
+            
         </ul>
+       </div>
     </nav>`);
+	addModal();
 }
 
 // Thêm header
@@ -118,7 +99,7 @@ function Header() {
 //Footer
 function Footer() {
     document.write(`
-    <footer class="footer bg-white">
+    <footer class="footer bg-white" style="width: 100%">
     <section class="footer-top clearfix">
         <div class="footer-col">
             <h6 class="footer-title">
@@ -197,313 +178,271 @@ function Footer() {
     </div>
     </footer>`);
 }
+//Modal
+function addModal(){
+	document.write(`
+	<!-- Modal Đăng nhập -->
+    <div class="modal" id="modallog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: rgba(0,0,0,0.8);">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="font-size: 25px; padding-top: 5px; color: #c4b22a">
+                        Đăng nhập 
+                     </h5>
+                     <button class="btn btn-close btn-light" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div>
+                            <span id="tb" style="color: red;font-style: italic;"></span></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="dn"> Tên đăng nhập:</label>
+                            <span id="errdn" style="color: red;font-style: italic;">(*)</span>
+                            <input type="text" name="" id="dn" class="form-control" placeholder="Tên đăng nhập" value="22711231"> 
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mk">Mật khẩu:</label>
+                        <span id="errmk" style="color: red;font-style: italic;">(*)</span>    
+                        <input type="password" class="form-control" name="" id="mk" placeholder="Mật khẩu" value="Hung123@">
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-toggle="modal" onclick="dangnhap()"  >Đăng nhập</button>
+                    <button data-bs-dismiss="modal" class="btn btn-light" id="dong" onclick="dong()" >Đóng</button>
+                </div>
+            </div>
 
-//Copy
-window.onload = function () {
-	khoiTao();
+        </div>
+    </div>
+    <!-- Modal Đăng nhâp thành công -->
+    <div class="modal" id="dntc">
+        <div class="modal-dialog">
+            <div class="modal-content"  style="background-color: rgba(0,0,0,0.8);">
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" class="btn btn-close btn-light" style="color: white;"></button>
+                </div>
+                <div class="modal-body text-white " style="text-align: center; font-weight: bold; font-size: 30px;      ">
+                    <p>Đăng nhập thành công</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal chọn đăng ký -->
 
-	// autocomplete cho khung tim kiem
-	autocomplete(document.getElementById('search-box'), list_products);
-	// Thêm sản phẩm vào trang
-	var sanPhamPhanTich
-	var sanPhamPhanTrang;
+    <div
+        class="modal fade"
+        id="modalId"
+    >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: rgba(0,0,0,0.8);" >
+                <div class="modal-header">
+                    <h5  id="modalTitleId" style="text-align: center;">
+                        Mời Bạn Chọn!!!
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <div class="container-fluid">
+                        <button class="btn btn-light" data-bs-target="#dangki" data-bs-toggle="modal" onclick="dongmodal()">Đăng ký Tài Khoản</button>
+                        <a href="../html/hoso1.html"><button class="btn btn-primary text-none">Đăng Ký Thành Viên</button></a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
+                        Đóng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Modal Đăng ký -->
+    <div class="modal" id="dangki">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: rgba(0,0,0,0.8);" >
+                <div class="modal-header">
+                    <h3 style="font-size: 25px; padding-top: 5px; color: #c4b22a;">
+                        Đăng ký
+                    </h3>
+                    <button class=" btn btn-light btn-close"  data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <p id="tb" style="text-align: center; color: white; font-size: 15px;"></p>
+                            <label for="user">Tên người dùng:</label>
+                            <span id="err1" style="color: red;font-style: italic;"></span>
+                            <input type="text" id="user"  class="form-control" placeholder="Nhập tên người dùng(gồm chữ và số)" value="Tran Ngoc Hung" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sdt">Số điện thoại:</label>
+                            <span id="err2" style="color: red;font-style: italic;"></span>
+                            <input type="tel" id="sdt" placeholder="Số điện thoại" class="form-control" value="0393465113" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <span id="err3" style="color: red;font-style: italic;"></span>
+                            <input type="email" class="form-control" id="email" placeholder="Email" value="tranngochung19112004@gmail.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password"> Mật khẩu:</label>
+                            <span id="err4" style="color: red;font-style: italic;"></span>
+                            <input type="password" id="password" class="form-control" placeholder="Mật khẩu có ít nhất một chữ hoa, một chữ thường và một ký tự đặc biệt" value="Hung1234@" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="againpassword">Nhập lại mật khẩu:</label>
+                            <span id="err5" style="color: red;font-style: italic;"></span>
+                            <input type="password" id="againpassword" class="form-control" placeholder="Nhập lại mật khẩu" value="Hung1234@">
+                        </div>
+                        <div class="form-group" style="margin-left: 300px;margin-top: 10px;">
+                            <input id="closemodal" type="button" class="btn btn-primary" onclick="dangky()" value="Đăng ký" data-bs-toggle="modal"></input>
+                            <button data-bs-dismiss="modal" class="btn btn-light" id="dong" onclick="dong()">Đóng</button>
+                        </div>
+                    </form>
 
-	var filters = getFilterFromURL();
-	if (filters.length) { // có filter
-		sanPhamPhanTich = phanTich_URL(filters, true);
-		sanPhamPhanTrang = tinhToanPhanTrang(sanPhamPhanTich, filtersFromUrl.page || 1);
-		if (!sanPhamPhanTrang.length) alertNotHaveProduct(false);
-		else addProductsFrom(sanPhamPhanTrang);
+                </div>
+                
+            </div>
 
-		// hiển thị list sản phẩm
-		document.getElementsByClassName('contain-products')[0].style.display = '';
+        </div>
+    </div>
 
-	} else { // ko có filter : trang chính mặc định sẽ hiển thị các sp hot, ...
-		var soLuong = (window.innerWidth < 1200 ? 4 : 5); // màn hình nhỏ thì hiển thị 4 sp, to thì hiển thị 5
-		// Các màu
-		var yellow_red = ['#ff9c00', '#ec1f1f'];
-		// Thêm các khung sản phẩm
-		var div = document.getElementsByClassName('contain-khungSanPham')[0];
-		addKhungSanPham('NỔI BẬT NHẤT', yellow_red, ['star=3', 'sort=rateCount-decrease'], soLuong, div);
-	}
-	// Thêm filter đã chọn
-	addAllChoosedFilter();
-};
+<!-- Modal Đăng ký thành công -->
+    <div class="modal" id="dktc">
+        <div class="modal-dialog">
+            <div class="modal-content"  style="background-color: rgba(0,0,0,0.8);">
+                <div class="modal-header">
+                    <button data-bs-dismiss="modal" class="btn btn-close" style="color: white;"></button>
+                </div>
+                <div class="modal-body text-white " style="text-align: center; font-weight: bold; font-size: 30px;      ">
+                    <p>Đăng ký thành công</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal Dịa điểm -->
+    <div class="modal" id="diadiem">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(47,128,237);">
+                    <p style="margin-top: 5px;">Mời bạn chọn địa chỉ <span id="diadiemchon">...</span></p>
+                    <button data-bs-dismiss="modal" class="btn btn-blue text-white" style="border: 1px solid lightblue;">Đóng</button>
 
-var soLuongSanPhamMaxTrongMotTrang = 15;
+                </div>
+                <div class="modal-body text-dark">
+                    <div class="modal-bodydd">
+                        <div class="row ">
+                            <div class="col-5" >
+                                <p><a href="#" id="q1" class="loc">Quận 1</a></p>
+                            </div>
+                            <div class="col-5" >
+                                <p><a href="#" id="q3" class="loc">Quận 3</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="q4">
+                                <p><a href="#" class="loc">Quận 4</a></p>
+                            </div>
+                            <div class="col-5" id="q5">
+                                <p><a href="#" class="loc">Quận 5</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="q6">
+                                <p><a href="#" class="loc">Quận 6</a></p>
+                            </div>
+                            <div class="col-5" id="q7">
+                                <p><a href="#" class="loc">Quận 7</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="q8">
+                                <p><a href="#" class="loc">Quận 8</a></p>
+                            </div>
+                            <div class="col-5" id="q10">
+                                <p><a href="#" class="loc">Quận 10</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="q11">
+                                <p><a href="#" class="loc">Quận 11</a></p>
+                            </div>
+                            <div class="col-5" id="q12">
+                                <p><a href="#" class="loc">Quận 12</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="qbt">
+                                <p><a href="#" class="loc">Quận Bình Tân</a></p>
+                            </div>
+                            <div class="col-5" id="abth">
+                                <p><a href="#" class="loc">Quận Bình Thạnh</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="qgv">
+                                <p><a href="#" class="loc">Quận Gò Vấp</a></p>
+                            </div>
+                            <div class="col-5" id="qpn">
+                                <p><a href="#" class="loc">Quận Phú Nhuận</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="qtb">
+                                <p><a href="#" class="loc">Quận Tân Bình</a></p>
+                            </div>
+                            <div class="col-5" id="qtp">
+                                <p><a href="#" class="loc">Quận Tân Phú</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="qbc">
+                                <p><a href="#" class="loc">Huyện Bình Chánh</a></p>
+                            </div>
+                            <div class="col-5" id="hcg">
+                                <p><a href="#" class="loc">Huyện Cần Giờ</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="hcc">
+                                <p><a href="#" class="loc">Huyện Củ Chi</a></p>
+                            </div>
+                            <div class="col-5" id="hhm">
+                                <p><a href="#" class="loc">Huyện Hóc Môn</a> </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5" id="hnb">
+                                <p><a href="#" class="loc">Huyện Nhà Bè</a></p>
+                            </div>
+                            <div class="col-5" >
+                                <p><a href="#" id="tptd" class="loc">TP.Thủ Đức</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-// =========== Đọc dữ liệu từ url ============
-var filtersFromUrl = { // Các bộ lọc tìm được trên url sẽ đc lưu vào đây
-	company: '',
-	search: '',
-	price: '',
-	promo: '',
-	star: '',
-	page: '',
-	sort: {
-		by: '',
-		type: 'ascending'
-	}
+            </div>
+
+        </div>
+
+    </div>
+	`);
 }
-
-function getFilterFromURL() { // tách và trả về mảng bộ lọc trên url
-	var fullLocation = window.location.href;
-	fullLocation = decodeURIComponent(fullLocation);
-	var dauHoi = fullLocation.split('?'); // tách theo dấu ?
-
-	if (dauHoi[1]) {
-		var dauVa = dauHoi[1].split('&');
-		return dauVa;
-	}
-
-	return [];
-}
-
-function phanTich_URL(filters, saveFilter) {
-	var result = copyObject(list_products);
-
-	for (var i = 0; i < filters.length; i++) {
-		var dauBang = filters[i].split('=');
-
-		switch (dauBang[0]) {
-			case 'search':
-				dauBang[1] = dauBang[1].split('+').join(' ');
-				result = timKiemTheoTen(result, dauBang[1]);
-				if (saveFilter) filtersFromUrl.search = dauBang[1];
-				break;
-
-			case 'price':
-				if (saveFilter) filtersFromUrl.price = dauBang[1];
-
-				var prices = dauBang[1].split('-');
-				prices[1] = Number(prices[1]) || 1E10;
-				result = timKiemTheoGiaTien(result, prices[0], prices[1]);
-				break;
-
-			case 'company':
-				result = timKiemTheoCongTySanXuat(result, dauBang[1]);
-				if (saveFilter) filtersFromUrl.company = dauBang[1];
-				break;
-
-			case 'star':
-				result = timKiemTheoSoLuongSao(result, dauBang[1]);
-				if (saveFilter) filtersFromUrl.star = dauBang[1];
-				break;
-
-			case 'promo':
-				result = timKiemTheoKhuyenMai(result, dauBang[1]);
-				if (saveFilter) filtersFromUrl.promo = dauBang[1];
-				break;
-
-			case 'page': // page luôn ở cuối đường link
-				if (saveFilter) filtersFromUrl.page = dauBang[1];
-				break;
-
-			case 'sort':
-				var s = dauBang[1].split('-');
-				var tenThanhPhanCanSort = s[0];
-
-				switch (tenThanhPhanCanSort) {
-					case 'price':
-						if (saveFilter) filtersFromUrl.sort.by = 'price';
-						result.sort(function (a, b) {
-							var giaA = parseInt(a.price.split('.').join(''));
-							var giaB = parseInt(b.price.split('.').join(''));
-							return giaA - giaB;
-						});
-						break;
-
-					case 'star':
-						if (saveFilter) filtersFromUrl.sort.by = 'star';
-						result.sort(function (a, b) {
-							return a.star - b.star;
-						});
-						break;
-
-					case 'rateCount':
-						if (saveFilter) filtersFromUrl.sort.by = 'rateCount';
-						result.sort(function (a, b) {
-							return a.rateCount - b.rateCount;
-						});
-						break;
-
-					case 'name':
-						if (saveFilter) filtersFromUrl.sort.by = 'name';
-						result.sort(function (a, b) {
-							return a.name.localeCompare(b.name);
-						});
-						break;
-				}
-
-				if (s[1] == 'decrease') {
-					if (saveFilter) filtersFromUrl.sort.type = 'decrease';
-					result.reverse();
-				}
-
-				break;
-		}
-	}
-
-	return result;
-}
-
-// thêm các sản phẩm từ biến mảng nào đó vào trang
-function addProductsFrom(list, vitri, soluong) {
-	var start = vitri || 0;
-	var end = (soluong ? start + soluong : list.length);
-	for (var i = start; i < end; i++) {
-		addProduct(list[i]);
-	}
-}
-
-function clearAllProducts() {
-	document.getElementById('products').innerHTML = "";
-}
-
-// Thêm sản phẩm vào các khung sản phẩm
-function addKhungSanPham(tenKhung, color, filter, len, ele) {
-	// convert color to code
-	var gradient = `background-image: linear-gradient(120deg, ` + color[0] + ` 0%, ` + color[1] + ` 50%, ` + color[0] + ` 100%);`
-	var borderColor = `border-color: ` + color[0];
-	var borderA = `	border-left: 2px solid ` + color[0] + `;
-					border-right: 2px solid ` + color[0] + `;`;
-
-	// mở tag
-	var s = `<div class="khungSanPham" style="` + borderColor + `">
-				<h3 class="tenKhung" style="` + gradient + `">* ` + tenKhung + ` *</h3>
-				<div class="listSpTrongKhung flexContain">`;
-
-	// thêm các <li> (sản phẩm) vào tag
-	var spResult = phanTich_URL(filter, false);
-	if (spResult.length < len) len = spResult.length;
-
-	for (var i = 0; i < len; i++) {
-		s += addProduct(spResult[i], null, true);
-		// truyền vào 'true' để trả về chuỗi rồi gán vào s
-	}
-
-	// thêm nút xem tất cả rồi đóng tag
-	s += `	</div>
-			<a class="xemTatCa" href="index.html?` + filter.join('&') + `" style="` + borderA + `">
-				Xem tất cả ` + spResult.length + ` sản phẩm
-			</a>
-		</div> <hr>`;
-
-	// thêm khung vào contain-khung
-	ele.innerHTML += s;
-}
-
-// Nút phân trang
-function themNutPhanTrang(soTrang, trangHienTai) {
-	var divPhanTrang = document.getElementsByClassName('pagination')[0];
-
-	var k = createLinkFilter('remove', 'page'); // xóa phân trang cũ
-	if (k.indexOf('?') > 0) k += '&';
-	else k += '?'; // thêm dấu
-
-	if (trangHienTai > 1) // Nút về phân trang trước
-		divPhanTrang.innerHTML = `<a href="` + k + `page=` + (trangHienTai - 1) + `"><i class="fa fa-angle-left"></i></a>`;
-
-	if (soTrang > 1) // Chỉ hiện nút phân trang nếu số trang > 1
-		for (var i = 1; i <= soTrang; i++) {
-			if (i == trangHienTai) {
-				divPhanTrang.innerHTML += `<a href="javascript:;" class="current">` + i + `</a>`
-
-			} else {
-				divPhanTrang.innerHTML += `<a href="` + k + `page=` + (i) + `">` + i + `</a>`
-			}
-		}
-
-	if (trangHienTai < soTrang) { // Nút tới phân trang sau
-		divPhanTrang.innerHTML += `<a href="` + k + `page=` + (trangHienTai + 1) + `"><i class="fa fa-angle-right"></i></a>`
-	}
-}
-
-// Tính toán xem có bao nhiêu trang + trang hiện tại,
-// Trả về mảng sản phẩm trong trang hiện tại tính được
-function tinhToanPhanTrang(list, vitriTrang) {
-	var sanPhamDu = list.length % soLuongSanPhamMaxTrongMotTrang;
-	var soTrang = parseInt(list.length / soLuongSanPhamMaxTrongMotTrang) + (sanPhamDu ? 1 : 0);
-	var trangHienTai = parseInt(vitriTrang < soTrang ? vitriTrang : soTrang);
-
-	themNutPhanTrang(soTrang, trangHienTai);
-	var start = soLuongSanPhamMaxTrongMotTrang * (trangHienTai - 1);
-
-	var temp = copyObject(list);
-
-	return temp.splice(start, soLuongSanPhamMaxTrongMotTrang);
-}
-
-// ======== TÌM KIẾM (Từ mảng list truyền vào, trả về 1 mảng kết quả) ============
-
-// function timKiemTheoTen(list, ten, soluong) {}
-// hàm Tìm-kiếm-theo-tên được đặt trong dungchung.js , do trang chitietsanpham cũng cần dùng tới nó
-function timKiemTheoSoLuongSao(list, soLuongSaoToiThieu, soluong) {
-	var count, result = [];
-	if (soluong < list.length) count = soluong;
-	else count = list.length;
-
-	for (var i = 0; i < list.length; i++) {
-		if (list[i].star >= soLuongSaoToiThieu) {
-			result.push(list[i]);
-			count--;
-			if (count <= 0) break;
-		}
-	}
-
-	return result;
-}
-
-// ========== LỌC ===============
-
-
-// Tạo link cho bộ lọc
-// type là 'add' hoặc 'remove',
-// tương ứng 'thêm' bộ lọc mới có giá trị = valueAdd, hoặc 'xóa' bộ lọc đã có
-function createLinkFilter(type, nameFilter, valueAdd) {
-	var o = copyObject(filtersFromUrl);
-	o.page = ''; // reset phân trang
-
-	if (nameFilter == 'sort') {
-		if (type == 'add') {
-			o.sort.by = valueAdd.by;
-			o.sort.type = valueAdd.type;
-
-		} else if (type == 'remove') {
-			o.sort.by = '';
-		}
-
-	} else {
-		if (type == 'add') o[nameFilter] = valueAdd;
-		else if (type == 'remove') o[nameFilter] = '';
-	}
-
-	var link = 'index.html'; //window.location.href.split('?')[0].replace('#', '');
-	var h = false; // Đã có dấu hỏi hay chưa
-
-
-	// thêm sort (do sort trong filtersFromUrl là kiểu object, khác với kiểu string của những loại còn lại)
-	// nên lúc tạo link sẽ khác những loại trên
-	if (o.sort.by != '')
-		link += (h ? '&' : '?') + 'sort=' + o.sort.by + '-' + o.sort.type;
-
-	return link;
-}
-
-// Thông báo nếu không có sản phẩm
-function alertNotHaveProduct(coSanPham) {
-	var thongbao = document.getElementById('khongCoSanPham');
-	if (!coSanPham) {
-		thongbao.style.width = "auto";
-		thongbao.style.opacity = "1";
-		thongbao.style.margin = "auto"; // Căn giữa
-		thongbao.style.transitionDuration = "1s"; // hiện ra từ từ
-
-	} else {
-		thongbao.style.width = "0";
-		thongbao.style.opacity = "0";
-		thongbao.style.margin = "0";
-		thongbao.style.transitionDuration = "0s"; // Ngay lâp tức biến mất
-	}
-}
-

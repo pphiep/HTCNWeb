@@ -4,77 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thế Giới Di Động</title>
-    <script src="http://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <script src="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script  type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
-    <script src="../js/chuyenanh.js"></script>
     <script src="../js/dangky.js"></script>
     <script src="../js/timKiem.js"></script>
     <script src="../js/index.js"></script>
+    <script>
+    $(document).ready(function(){
+        $(".input").keyup(function(event){ // Lắng nghe sự kiện khi người dùng nhập vào ô tìm kiếm
+            if (event.keyCode === 13) { // Kiểm tra nếu phím được ấn là phím "Enter" (mã 13)
+                var searchText = $(this).val().toLowerCase(); // Lấy giá trị nhập vào và chuyển về chữ thường
+                $("html, body").animate({ // Cuộn trang xuống phần "anhsec"
+                    scrollTop: $("#sec").offset().top
+                }, 10);
+            } else {
+                var searchText = $(this).val().toLowerCase(); // Lấy giá trị nhập vào và chuyển về chữ thường
+                $(".anhsec").filter(function(){ // Lọc các sản phẩm
+                    $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1); // Ẩn/hiện sản phẩm phù hợp với từ khóa tìm kiếm
+                }); 
+            }
+            // Điều chỉnh kích thước của khunggt
+            var visibleProducts = $('.anhsec:visible').length; // Số sản phẩm hiển thị
+                var productsPerRow = 4; // Số sản phẩm mỗi hàng
+                var rows = Math.ceil(visibleProducts / productsPerRow); // Số hàng
+                var newHeight = rows * ($('.anhsec').outerHeight() + 10); // Tính toán chiều cao mới
+                $('.khunggt').height(newHeight); // Đặt chiều cao mới cho khunggt
+        });
+        // Lắng nghe sự kiện khi click vào các link trên thanh menu
+    $('.liip').on('click', function(event){
+        event.preventDefault(); // Ngăn chặn hành động mặc định của link
+        var category = $(this).text(); // Lấy danh mục sản phẩm từ nội dung của link
+        searchProducts(category); // Gọi hàm tìm kiếm sản phẩm với danh mục đã chọn
+    });
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    crossorigin="anonymous">
-
-   <!-- owl carousel libraries -->
-   <link rel="stylesheet" href="../owlcarousel/owl.carousel.min.css">
-   <link rel="stylesheet" href="../owlcarousel/owl.theme.default.min.css">
-   <script src="../Jquery/Jquery.min.js"></script>
-   <script src="../owlcarousel/owl.carousel.min.js"></script>
-
-    <link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/topnav.css">
-	<link rel="stylesheet" href="../css/header.css">
-	<link rel="stylesheet" href="../css/banner.css">
-	<link rel="stylesheet" href="../css/taikhoan.css">
-	<link rel="stylesheet" href="../css/trangchu.css">
-	<link rel="stylesheet" href="../css/home_products.css">
-	<link rel="stylesheet" href="../css/pagination_phantrang.css">
-	<link rel="stylesheet" href="../css/footer.css">
-    <style>
-        .carousel-item img {
-          max-height: 300px; 
-          object-fit: cover; /*Tránh méo hình ảnh */
-          border-radius: 10px;
-          border: 1px solid gray;
-        }
-        .carousel {
-            margin-bottom: 10px;
-        }
-        .carousel-content {
-        position: relative;
-        }
-
-        .carousel-item {
-        transition: transform 0.8s ease; /* Tăng kích thước chuyển đổi slide */
-        }
-
-        .carousel-item.next {
-        transform: translateX(33.33333%);
-        }
-
-        .carousel-item.prev {
-        transform: translateX(-33.33333%);
-        } 
-        .form-group {
-            margin-top: 15px;
-        }
-        .modal-header {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
-        /*Tạo hiện ứng cho modal*/
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    // Hàm tìm kiếm sản phẩm
+    function searchProducts(category) {
+        $(".anhsec").hide(); // Ẩn tất cả các sản phẩm
+        $(".anhsec:contains('" + category + "')").show(); // Hiển thị sản phẩm có chứa danh mục được chọn
+        $("html, body").animate({ // Cuộn trang xuống phần "anhsec"
+                    scrollTop: $("#sec").offset().top
+                }, 10);
+        // Điều chỉnh kích thước của khunggt
+        var visibleProducts = $('.anhsec:visible').length; // Số sản phẩm hiển thị
+        var productsPerRow = 4; // Số sản phẩm mỗi hàng
+        var rows = Math.ceil(visibleProducts / productsPerRow); // Số hàng
+        var newHeight = rows * ($('.anhsec').outerHeight() + 10); // Tính toán chiều cao mới
+        $('.khunggt').height(newHeight); // Đặt chiều cao mới cho khunggt
         
-        .modal {
-            animation: modalFadeIn 0.3s ease-out forwards;
-        }
-    </style>
+    }  
+    }
+    
+);
+    </script>
 </head>
 <body>
     <header>
@@ -297,79 +280,48 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            <div id="products" class="container-fluid">
-                <div class="row"> <!-- Bắt đầu một hàng mới -->
-                    <!-- Sản phẩm sẽ được thêm vào đây bằng JavaScript -->
-                </div>
-            </div>
-	    </section>
-            <div class="listtop">
-                <h2 class="text-left">TOP HÃNG ĐIỆN THOẠI ĐƯỢC YÊU THÍCH NHÂT</h2>
-            </div>
-        </section>
-            <!--Modal đặt ngay-->
-            <div class="modal" id="dathang">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content" style="color: black;">
-                        <div class="modal-header">
-                            <div style="width: 20%;"><img style="width: 80px; height: 80px;" src="../img/banner1.png" alt=""></div>
-                            <div style="width: 85%;">
-                                <h4>Điện thoại Iphone 15 Pro 128GB</h4>
-                                <span style="color: rgb(254, 75, 75); position: relative; float: right; margin-top: 5px;">26.990.000 VNĐ</span>
+                    <div class="rowgt" style="border-bottom: none;">
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Vivo X60 Pro');">
+                            <img src="../img/vivox60.jpg" alt="Vivo X60 pro" >
+                            <h6>Vivo X60 Pro</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">17.990.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">16.010.000đ</b>
                             </div>
                         </div>
-                        <div class="modal-body">
-                            <form action="#">
-                                <div class="form-group"><input type="text" class="form-control" placeholder="Họ tên" id="txthoten"></div>
-                                <span style="color: red;" id="errhoten"></span>
-                                <div class="row form-group">
-                                <div class="col-6">
-                                    <input type="text" class="form-control" placeholder="Số điện thoại" id="txtsodienthoai">
-                                    <span style="color: red;" id="errsdt"></span>
-                                    </div>
-                                <div class="col-6">
-                                    <select name="gt" class="form-select">
-                                    <option value="value1" selected="selected">Chọn giới tính</option>
-                                    <option value="value2">Nam</option>
-                                    <option value="value3">Nữ</option>
-                                    </select>
-                                    <span style="color: red;" id="errgt"></span>
-                                </div>
-                                </div>
-                                <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
-                                <span style="color: red;" id="erremail"></span>
-                                <div class="row form-group">
-                                <div class="col-6">
-                                    <select name="tp" class="form-select" id="thanhpho">
-                                    <option value="" selected="selected">Chọn thành phố</option>
-                                    <option value="Thành phố Hồ Chí Minh" >Thành phố Hồ Chí Minh</option>
-                                    <option value="Thành phố Hà Nội" >Thành phố Hà Nội</option>
-                                    <option value="Tân An" >Tân An</option>
-                                    <option value="Thành phố Đà Nẵng" >Thành phố Đà Nẵng</option>
-                                    </select>
-                                </div>
-                                <div class="col-6">
-                                    <select name="Quan" class="form-select" id="quan" disabled>
-                                    
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="form-group"><input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiachi"></div>
-                                <span style="color: red;" id="errdiachi"></span>
-                                <div class="form-group">Tôi đã đọc và đồng ý với <span style="color: orange; font-weight: bold;">CHÍNH SÁCH</span> của cửa hàng</div>
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Xiaomi Redmi Note 11');">
+                            <img src="../img/xiaominote11.jpg" alt="Xiaomi note 11" >
+                            <h6>Xiaomi Redmi Note 11</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">4.290.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">3.190.000đ</b>
+                            </div>
                         </div>
-                        <div class="modal-footer" style="display: flex; flex-direction: row;">
-                            <input type="submit" type="button" class="btn btn-primary" value="Xác nhận"></input>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Xiaomi Mi 11T');">
+                            <img src="../img/xiaomi11t.png" alt="Mi 11 T">
+                            <h6>Xiaomi Mi 11T</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">11.990.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">10.600.000đ</b>
+                            </div>
+                        </div>
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Redmi Note 11S');">
+                            <img src="../img/redmi11s.png" alt="Redmi Note 11S" >
+                            <h6>Redmi Note 11S</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">5.590.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">4.990.000đ</b>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </article>
-    <!--Footer-->
-    <script>Footer();</script>
+    <script>Footer()</script>
     <!-- js footer -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -444,310 +396,6 @@
         });
     </script>
 
-<!-- Modal Đăng nhập -->
-    <div class="modal" id="modaltaikhoan">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background-color: rgba(0,0,0,0.8);">
-                <div class="modal-header">
-                    <h5 class="modal-title" style="font-size: 25px; padding-top: 5px; color: #c4b22a">
-                        Đăng nhập 
-                     </h5>
-                     <button class="btn btn-close btn-light" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <div>
-                            <span id="tb" style="color: red;font-style: italic;"></span></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="dn"> Tên đăng nhập:</label>
-                            <span id="errdn" style="color: red;font-style: italic;">(*)</span>
-                            <input type="text" name="" id="dn" class="form-control" placeholder="Tên đăng nhập"> 
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="mk">Mật khẩu:</label>
-                        <span id="errmk" style="color: red;font-style: italic;">(*)</span>    
-                        <input type="password" class="form-control" name="" id="mk" placeholder="Mật khẩu">
-                        </div>
-                        
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-toggle="modal" onclick="dangnhap()" >Đăng nhập</button>
-                    <button data-bs-dismiss="modal" class="btn btn-light" id="dong" onclick="dong()" >Đóng</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-<!-- Modal Đăng ký -->
-    <div class="modal" id="modaltaikhoan">
-        <div class="modal-dialog">
-            <div class="modal-content" style="background-color: rgba(0,0,0,0.8);" >
-                <div class="modal-header">
-                    <h3 style="font-size: 25px; padding-top: 5px; color: #c4b22a;">
-                        Đăng ký
-                    </h3>
-                    <button class=" btn btn-light btn-close"  data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="">
-                        <div class="form-group">
-                            <p id="tb" style="text-align: center; color: white; font-size: 15px;"></p>
-                            <label for="user">Tên người dùng:</label>
-                            <span id="err1" style="color: red;font-style: italic;"></span>
-                            <input type="text" id="user"  class="form-control" placeholder="Nhập tên người dùng(gồm chữ và số)" >
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="sdt">Số điện thoại:</label>
-                            <span id="err2" style="color: red;font-style: italic;"></span>
-                            <input type="tel" id="sdt" placeholder="Số điện thoại" class="form-control" >
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <span id="err3" style="color: red;font-style: italic;"></span>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="password"> Mật khẩu:</label>
-                            <span id="err4" style="color: red;font-style: italic;"></span>
-                            <input type="password" id="password" class="form-control" placeholder="Mật khẩu có ít nhất một chữ hoa, một chữ thường và một ký tự đặc biệt" >
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="againpassword">Nhập lại mật khẩu:</label>
-                            <span id="err5" style="color: red;font-style: italic;"></span>
-                            <input type="password" id="againpassword" class="form-control" placeholder="Nhập lại mật khẩu">
-                        </div>
-                        <div class="form-group" style="margin-left: 300px;margin-top: 10px;">
-                            <input id="closemodal" type="button" class="btn btn-primary" onclick="dangky()" value="Đăng ký" data-bs-target="#dktc" data-bs-toggle="modal"></input>
-                            <button data-bs-dismiss="modal" class="btn btn-light" id="dong" onclick="dong()">Đóng</button>
-                        </div>
-                    </form>
-
-                </div>
-                
-            </div>
-
-        </div>
-    </div>
-
-<!-- Modal Đăng ký thành công -->
-        <div class="modal" id="dktc">
-            <div class="modal-dialog">
-                <div class="modal-content"  style="background-color: rgba(0,0,0,0.8);">
-                    <div class="modal-header">
-                        <button data-bs-dismiss="modal" class="btn btn-close" style="color: white;"></button>
-                    </div>
-                    <div class="modal-body text-white " style="text-align: center; font-weight: bold; font-size: 30px;      ">
-                        <p>Đăng ký thành công</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-<!-- Modal Dịa điểm -->
-    <div class="modal" id="diadiem">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: rgb(47,128,237);">
-                    <p style="margin-top: 5px;">Mời bạn chọn địa chỉ <span id="diadiemchon">...</span></p>
-                    <button data-bs-dismiss="modal" class="btn btn-blue text-white" style="border: 1px solid lightblue;">Đóng</button>
-
-                </div>
-                <div class="modal-body text-dark">
-                    <div class="modal-bodydd">
-                        <div class="row ">
-                            <div class="col-5" >
-                                <p><a href="#" id="q1" class="loc">Quận 1</a></p>
-                            </div>
-                            <div class="col-5" >
-                                <p><a href="#" id="q3" class="loc">Quận 3</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="q4">
-                                <p><a href="#" class="loc">Quận 4</a></p>
-                            </div>
-                            <div class="col-5" id="q5">
-                                <p><a href="#" class="loc">Quận 5</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="q6">
-                                <p><a href="#" class="loc">Quận 6</a></p>
-                            </div>
-                            <div class="col-5" id="q7">
-                                <p><a href="#" class="loc">Quận 7</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="q8">
-                                <p><a href="#" class="loc">Quận 8</a></p>
-                            </div>
-                            <div class="col-5" id="q10">
-                                <p><a href="#" class="loc">Quận 10</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="q11">
-                                <p><a href="#" class="loc">Quận 11</a></p>
-                            </div>
-                            <div class="col-5" id="q12">
-                                <p><a href="#" class="loc">Quận 12</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="qbt">
-                                <p><a href="#" class="loc">Quận Bình Tân</a></p>
-                            </div>
-                            <div class="col-5" id="abth">
-                                <p><a href="#" class="loc">Quận Bình Thạnh</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="qgv">
-                                <p><a href="#" class="loc">Quận Gò Vấp</a></p>
-                            </div>
-                            <div class="col-5" id="qpn">
-                                <p><a href="#" class="loc">Quận Phú Nhuận</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="qtb">
-                                <p><a href="#" class="loc">Quận Tân Bình</a></p>
-                            </div>
-                            <div class="col-5" id="qtp">
-                                <p><a href="#" class="loc">Quận Tân Phú</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="qbc">
-                                <p><a href="#" class="loc">Huyện Bình Chánh</a></p>
-                            </div>
-                            <div class="col-5" id="hcg">
-                                <p><a href="#" class="loc">Huyện Cần Giờ</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="hcc">
-                                <p><a href="#" class="loc">Huyện Củ Chi</a></p>
-                            </div>
-                            <div class="col-5" id="hhm">
-                                <p><a href="#" class="loc">Huyện Hóc Môn</a> </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-5" id="hnb">
-                                <p><a href="#" class="loc">Huyện Nhà Bè</a></p>
-                            </div>
-                            <div class="col-5" >
-                                <p><a href="#" id="tptd" class="loc">TP.Thủ Đức</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- <script>
-        let link=document.getElementById("q1");
-        
-        let timkiem= document.getElementById("Diemmuadt");
-        link.addEventListener("click", function(event){
-            event.preventDefault();
-            let linkValue=link.textContent;
-            timkiem.textContent=linkValue;
-            $('#diadiem').modal('hide');
-        }); 
-        
-    </script> -->
-    <!--Xử lý modal đăng ký-->
-    <script>
-        $(document).ready(function () {
-          $("#thanhpho").change(function (e) { 
-            let tp = $("#thanhpho").val();
-            if(tp != ""){
-                $("#quan").empty();
-                $("#quan").attr("disabled", false);
-                let text = "";
-                if(tp === "Thành phố Hồ Chí Minh"){
-                  text = "<option value=" + "Quận 1" +">Quận 1</option>"
-                                + "<option value=" + "Quận 2" +">Quận 2</option>"
-                                + "<option value=" + "Quận 3" +">Quận 3</option>"
-                                + "<option value=" + "Quận 4" +">Quận 4</option>"
-                                + "<option value=" + "Quận 5" +">Quận 5</option>"
-                                + "<option value=" + "Quận 6" +">Quận 6</option>"
-                                + "<option value=" + "Quận 7" +">Quận 7</option>"
-                                + "<option value=" + "Quận 8" +">Quận 8</option>"
-                                + "<option value=" + "Quận 9" +">Quận 9</option>"
-                                + "<option value=" + "Quận 10" +">Quận 10</option>"
-                                + "<option value=" + "Quận 11" +">Quận 11</option>"
-                                + "<option value=" + "Quận 12" +">Quận 12</option>"
-                                + "<option value=" + "Gò Vấp" +">Gò Vấp</option>"
-                                + "<option value=" + "Tân Bình" +">Tân Bình</option>";
-                }
-                if(tp == "Thành phố Hà Nội"){
-                  text = "<option value=" + "Ba Đình" +">Ba Đình</option>"
-                                + "<option value=" + "Cầu Giấy" +">Cầu Giấy</option>"
-                                + "<option value=" + "Đống Đa" +">Đống Đa</option>"
-                                + "<option value=" + "Hai Bà Trưng" +">Hai Bà Trưng</option>"
-                                + "<option value=" + "Hoàn Kiếm" +">Hoàn Kiếm</option>"
-                                + "<option value=" + "Thanh Xuân" +">Thanh Xuân</option>"
-                                + "<option value=" + "Hoàng Mai" +">Hoàng Mai</option>";
-                                + "<option value=" + "Long Biên" +">Long Biên</option>";
-                                + "<option value=" + "Hà Đông" +">Hà Đông</option>";
-                                + "<option value=" + "Tây Hồ" +">Tây Hồ</option>";
-                                + "<option value=" + "Nam Từ Liêm" +">Nam Từ Liêm</option>";
-                                + "<option value=" + "Bắc Từ Liêm" +">Bắc Từ Liêm</option>";
-                }
-                if(tp == "Tân An"){
-                  text = "<option value=" + "Phường 1" +">Phường 1</option>"
-                                + "<option value=" + "Phường 2" +">Phường 2</option>"
-                                + "<option value=" + "Phường 3" +">Phường 3</option>"
-                                + "<option value=" + "Phường 4" +">Phường 4</option>"
-                                + "<option value=" + "Phường 5" +">Phường 5</option>"
-                                + "<option value=" + "Phường 6" +">Phường 6</option>"
-                                + "<option value=" + "Phường 7" +">Phường 7</option>"
-                                + "<option value=" + "Khánh Hậu" +">Khánh Hậu</option>"
-                                + "<option value=" + "Tân Khánh" +">Tân Khánh</option>";
-                }
-                if(tp == "Thành phố Đà Nẵng"){
-                  text = "<option value=" + "Hải Châu" +">Hải Châu</option>"
-                                + "<option value=" + "Thanh Khê" +">Thanh Khê</option>"
-                                + "<option value=" + "Sơn Trà" +">Sơn Trà</option>"
-                                + "<option value=" + "Ngũ hành sơn" +">Ngũ Hành Sơn</option>"
-                                + "<option value=" + "Liên Chiểu" +">Liên Chiểu</option>"
-                                + "<option value=" + "Cẩm Lệ" +">Cẩm Lệ</option>";
-                }
-                $("#quan").append(text);
-              }
-          });
-        });
-      </script>
-      <!--Show chi tiết sản phẩm-->
-      <script>
-        function showCT(st) {
-            $.getJSON("../data/data.js", function(data) {
-                var product = data.find(function(item) {
-                    return item["Tên sản phẩm"].toLowerCase() === st.toLowerCase();
-                });
-                if(product) {
-                    localStorage.setItem("product", JSON.stringify(product));
-                    window.open("../html/chitietsanpham.html", "_self");
-                } 
-            });
-        }
-      </script>
     <script>
         let modalLink= document.getElementsByClassName("loc");
         for(let i=0; i<modalLink.length;i++){
@@ -758,6 +406,7 @@
             });   
         }
     </script>
+    
     <script>
         // Đặt thời điểm đích mà bạn muốn đếm ngược đến
         let countDownDate = new Date("May 1, 2024 00:00:00").getTime();
@@ -784,12 +433,32 @@
             '<li><p class="time">' + minutes + '</p><p class="separate">:</p></li>' +
             '<li><p class="time">' + seconds + '</p><p class="separate"></p></li>';
                                   
-                                  // Nếu đếm ngược kết thúc, hiển thị một thông báo
-                                  if (distance < 0) {
-                                    clearInterval(x);
-                                    document.querySelector('.box-countdown .box-time').innerHTML = "EXPIRED";
-                                  }
-                                }, 1000);
+         // Nếu đếm ngược kết thúc, hiển thị một thông báo
+        if (distance < 0) {
+        clearInterval(x);
+        document.querySelector('.box-countdown .box-time').innerHTML = "Đã kết thúc";
+        }
+        },1000);
         </script>
+        <script>
+            function dongmodal(){
+                $('#modalId').modal('hide')
+            }
+        </script>
+
+        <!--Show chi tiết sản phẩm-->
+      <script>
+        function showCT(st) {
+            $.getJSON("../data/data.js", function(data) {
+                var product = data.find(function(item) {
+                    return item["Tên sản phẩm"].toLowerCase() === st.toLowerCase();
+                });
+                if(product) {
+                    localStorage.setItem("product", JSON.stringify(product));
+                    window.open("../html/chitietsanpham.html", "_self");
+                } 
+            });
+        }
+      </script>
 </body>
 </html>
