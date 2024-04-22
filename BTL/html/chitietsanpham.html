@@ -388,24 +388,29 @@
                     </div>
                     <div class="modal-body">
                         <form action="#">
-                            <div class="form-group"><input type="text" class="form-control mt-3 mb-4" placeholder="Họ tên" id="txthoten"></div>
-                            <span style="color: red;" id="errhoten"></span>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Họ tên" id="txthoten">
+                                <span style="color: red;" id="errhoten"></span>
+                            </div>
+                            
                             <div class="row form-group mt-3 mb-4">
                             <div class="col-6">
                                 <input type="text" class="form-control" placeholder="Số điện thoại" id="txtsodienthoai">
                                 <span style="color: red;" id="errsdt"></span>
                                 </div>
                             <div class="col-6">
-                                <select name="gt" class="form-select">
-                                <option value="value1" selected="selected">Chọn giới tính</option>
-                                <option value="value2">Nam</option>
-                                <option value="value3">Nữ</option>
+                                <select name="gt" class="form-select" id="gioitinh">
+                                <option value="" selected="selected">Chọn giới tính</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
                                 </select>
                                 <span style="color: red;" id="errgt"></span>
                             </div>
                             </div>
-                            <div class="form-group mt-3 mb-4"><input type="email" class="form-control" placeholder="Email"></div>
-                            <span style="color: red;" id="erremail"></span>
+                            <div class="form-group mt-3 mb-4"><input type="email" class="form-control" placeholder="Email" id="txtemail">
+                                <span style="color: red;" id="erremail"></span>
+                            </div>
+                            
                             <div class="row form-group mt-3 mb-4">
                             <div class="col-6">
                                 <select name="tp" class="form-select" id="thanhpho">
@@ -415,6 +420,7 @@
                                 <option value="Tân An" >Tân An</option>
                                 <option value="Thành phố Đà Nẵng" >Thành phố Đà Nẵng</option>
                                 </select>
+                                <span style="color: red;" id="errtp"></span>
                             </div>
                             <div class="col-6">
                                 <select name="Quan" class="form-select" id="quan" disabled>
@@ -422,12 +428,20 @@
                                 </select>
                             </div>
                             </div>
-                            <div class="form-group"><input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiachi"></div>
-                            <span style="color: red;" id="errdiachi"></span>
-                            <div class="form-group">Tôi đã đọc và đồng ý với <span style="color: orange; font-weight: bold;">CHÍNH SÁCH</span> của cửa hàng</div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiachi">
+                               
+                            </div>
+                             <span style="color: red;" id="errdiachi"></span>
+                             
+                            <div class="form-group">
+                                <hr>
+                                Tôi đã đọc và đồng ý với <span style="color: orange; font-weight: bold;">CHÍNH SÁCH</span> của cửa hàng
+                                
+                            </div>
                     </div>
                     <div class="modal-footer" style="display: flex; flex-direction: row;">
-                        <input type="submit" type="button" class="btn btn-primary" value="Xác nhận"></input>
+                        <input id="xacnhan" type="submit" type="button" class="btn btn-primary" value="Xác nhận"></input>
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>
                     </div>
                 </div>
@@ -500,6 +514,70 @@
     </script>
     <script>
         $(document).ready(function () {
+            $("#txthoten").blur(function (e) { 
+                e.preventDefault();
+                let txthoten = $("#txthoten").val();
+                let regtxthoten = /^([A-Z][a-z]*\s)+([A-Z][a-z]*)$/
+                
+                if (txthoten == '') {
+                    $("#errhoten").html("Họ tên không được để trống.");
+                } else if (!regtxthoten.test(txthoten)) {
+                    $("#errhoten").html("Họ tên phải từ 2 ký tự trở lên và viết hoa chữ cái đầu.");
+                } else {
+                    $("#errhoten").html("");  
+                }
+            });
+            $("#txtsodienthoai").blur(function (e) { 
+                e.preventDefault();
+                let txtsodienthoai = $("#txtsodienthoai").val();
+                let regtxtsodienthoai = /^(09|08|07|06|05|04|03|02)[0-9]{8}$/
+                if (txtsodienthoai == '') {
+                    $("#errsdt").html("Số điện thoại không được để trống.");
+                } else if (!regtxtsodienthoai.test(txtsodienthoai)) {
+                    $("#errsdt").html("Số điện thoại không hợp lệ.");
+                } else {
+                    $("#errsdt").html("");
+                }
+            });
+            $("#gioitinh").blur(function (e) { 
+                e.preventDefault();
+                let gioitinh = $("#gioitinh").val();
+                if (gioitinh == '') {
+                    $("#errgt").html("Vui lòng chọn giới tính.");
+                } else {
+                    $("#errgt").html("");
+                }
+            });
+            $("#txtemail").blur(function (e) { 
+                e.preventDefault();
+                let txtemail = $("#txtemail").val();
+                let regtxtemail = /^[A-Za-z0-9]+\@[a-zA-Z0-9]+\.(com)$/
+                if (txtemail == '') {
+                    $("#erremail").html("Email không được để trống.");
+                } else if (!regtxtemail.test(txtemail)) {
+                    $("#erremail").html("Email không đúng cú pháp.");
+                } else {
+                    $("#erremail").html("");
+                }
+            });
+            $("#thanhpho").blur(function (e) { 
+                e.preventDefault();
+                let thanhpho = $("#thanhpho").val();
+                if (thanhpho == '') {
+                    $("#errtp").html("Vui lòng chọn thành phố.");
+                } else {    
+                    $("#errtp").html("");
+                }
+            });
+            $("#txtdiachi").blur(function (e) { 
+                e.preventDefault();
+                let txtdiachi = $("#txtdiachi").val();
+                if (txtdiachi == '') {
+                    $("#errdiachi").html("Địa chỉ không được để trống.");
+                } else {    
+                    $("#errdiachi").html("");
+                }
+            });
           $("#thanhpho").change(function (e) { 
             let tp = $("#thanhpho").val();
             if(tp != ""){
@@ -557,6 +635,25 @@
                 }
                 $("#quan").append(text);
               }
+          });
+          let i = 1;
+          $("#xacnhan").click(function (e) { 
+            e.preventDefault();
+            let txthoten = $("#txthoten").val();
+                let txtsodienthoai = $("#txtsodienthoai").val();
+                let gioitinh = $("#gioitinh").val();
+                let txtemail = $("#txtemail").val();
+                let thanhpho = $("#thanhpho option:selected").html();
+                let txtdiachi = $("#txtdiachi").val();
+                let quan = $("#quan").val();
+
+                let newrow = "<tr> <td>"+ i +"</td> <td>"+ txthoten +"</td><td>"+ txtsodienthoai
+                    +"</td><td>"+gioitinh +"</td><td>"+ txtemail+"</td><td>"+ thanhpho
+                        +"</td><td>"+ quan+"</td><td>"+ txtdiachi+"</td> </tr>"
+                
+                i++;
+                $("#tb").append(newrow);
+                $("#dathang").modal('hide');
           });
         });
       </script>
