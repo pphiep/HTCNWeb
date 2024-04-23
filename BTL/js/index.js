@@ -1,27 +1,36 @@
 // Thêm nav vào trang
 function Nav() {
     document.write(`   
-	<nav>
-       <div class="container">
-        <ul>
-            <li style="height: 50px;"><a href="../html/index.html" style="line-height: 50px;">XShop</a></li>
-            <li><a  data-bs-target="#diadiem" data-bs-toggle="modal" href="" style="text-decoration: none;"><p style="color: white; font-size: 10px; text-decoration: none; padding-top: 15px;">Xem giá, khuyến mãi tại <br> <span style="font-size: 10px;" id="Diemmuadt">Hồ Chí Minh...</span><i class="fas fa-sort-down"></i> </p></a></li>
-            <li> <a href="# "><input type="text" class="search input" placeholder="Tìm kiếm...." style="padding-left: 6px;"> <i class="fas fa-search"></a></i></li>
-            <li><button onclick="window.open('../html/giohang.html');"><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
-            <li class="khungnav"><a href="../html/index.html" class="textnone">Trang Chủ</a></li>
-            <li class="khungnav"><a href="../html/GioiThieu.html" class="textnone">Giới thiệu</a></li>
-            <li class="khungnav"><a href="../html/LienHe.html" class="textnone">Liên hệ</a></li>
-            <li class="khungnav" style=" width: 100px;"><a href="#" class="textnone" id="linktt" data-bs-toggle="modal" data-bs-target="#modallog"><span href="#" class="fas fa-user-alt fa-1.4x" style="margin-right: 3px; display: none;" id="anhdn"></span><span id="logtext">Đăng nhập</span></a></li>
-            <li class="khungnav"><a href="#" class="textnone"  data-bs-toggle="modal" data-bs-target="#modalId"> Đăng ký</a></li>
-            
-        </ul>
-       </div>
-    </nav>`);
+        <nav>
+        <div class="container">
+            <ul>
+                <li style="height: 50px;"><a href="../html/index.html" style="line-height: 50px;">XShop</a></li>
+                <li><a  data-bs-target="#diadiem" data-bs-toggle="modal" href="" style="text-decoration: none;"><p style="color: white; font-size: 10px; text-decoration: none; padding-top: 15px;">Xem giá, khuyến mãi tại <br> <span style="font-size: 10px;" id="Diemmuadt">Hồ Chí Minh...</span><i class="fas fa-sort-down"></i> </p></a></li>
+                <li> <a href="# "><input type="text" class="search input" placeholder="Tìm kiếm...." style="padding-left: 6px;"> <i class="fas fa-search"></a></i></li>
+                <li><button onclick="moGioHang();"><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
+                <li class="khungnav"><a href="../html/index.html" class="textnone">Trang Chủ</a></li>
+                <li class="khungnav"><a href="../html/GioiThieu.html" class="textnone">Giới thiệu</a></li>
+                <li class="khungnav"><a href="../html/footer-TinTuc.html" class="textnone">Tin tức</a></li>
+                <li class="khungnav"><a href="../html/LienHe.html" class="textnone">Liên hệ</a></li>
+                <li class="khungnav" id="loginlink" style=" width: 100px;"><a href="#" class="textnone" data-bs-toggle="modal" data-bs-target="#modallog">Đăng nhập</a></li>
+                <li id="userlink" style=" width: auto;"><a href="../html/Thongtin.html" style="color: white;"><span class="fas fa-user-alt fa-1.4x" style="margin-right: 3px;"><span id="username" style="margin-left: 15px;"></span></span></a></li>
+                <li class="khungnav" id="signuplink"><a href="#" class="textnone"  data-bs-toggle="modal" data-bs-target="#modalId"> Đăng ký</a></li>
+                
+            </ul>
+        </div>
+        </nav>`
+    );
+    let user = document.getElementById("userlink");
+    if (user) {
+        user.style.display = "none";
+    }
+    if(localStorage.getItem("loginStus") === "true"){
+        changeNav();
+    }
 	addModal();
     dangky();
     dangnhap();
 }
-
 // Thêm header
 
 function Header() {
@@ -101,18 +110,18 @@ function Header() {
 //Footer
 function Footer() {
     document.write(`
-    <footer class="footer bg-white" style="width: 100%">
+    <footer class="footer bg-white" style="width: 100%; font-size: 20px;">
     <section class="footer-top clearfix">
         <div class="footer-col">
             <h6 class="footer-title">
                 Thông tin và chính sách
             </h6>
             <ul class="footer-menu " id="menu-list">
-                <li class="footer-list-link"><a class="footer-text-link" target="_blank" href="">Chính sách bảo hành</a></li>
+                <li class="footer-list-link"><a class="footer-text-link" target="_blank" href="../html/footer-CSBaoHanh.html">Chính sách bảo hành</a></li>
                 <li class="footer-list-link"><a class="footer-text-link" target="_blank" href="">Chính sách đổi trả</a></li>
                 <li class="footer-list-link"><a class="footer-text-link" target="_blank" href="">Mua hàng trả góp Online</a></li>
                 <li class="footer-list-link"><a class="footer-text-link" target="_blank" href="">Mua hàng trả góp bằng thẻ tín dụng</a></li>
-                <li class="footer-list-link"><a class="footer-text-link" target="_blank" href="">Giao hàng &amp; Thanh toán</a></li>
+                <li class="footer-list-link"><a class="footer-text-link" target="_blank" href="../html/footer-CSGiaoHang.html">Giao hàng &amp; Thanh toán</a></li>
                 <li class="footer-list-link" id="xem-them"><a class="footer-text-link" href="#">Xem thêm<span class='rotate-up'>▼</span></a></li>
             </ul>
         </div>
@@ -135,7 +144,7 @@ function Footer() {
             <ul class="footer-menu">
                 <li class="footer-list-contact"><p class="footer-text-call">Gọi mua hàng:</p><a class="footer-text-contact" target="_blank" href="tel:+84393465113" >0393465113</a></li>
                 <li class="footer-list-contact"><p class="footer-text-call">Gọi Khiếu nại:</p><a class="footer-text-contact" target="_blank" href="tel:+84393465113" >0393465113</a></li>    
-                <li class="footer-list-contact"><p class="footer-text-call">Gọi bảo hành:</p><a class="footer-text-contact" target="_blank" href="mailto: tranngochung19112004@gmail.com">tranngochung19112004@gmail.com</a></li>   
+                <li class="footer-list-contact"><p class="footer-text-call">Email:</p><a class="footer-text-contact" target="_blank" href="mailto: tranngochung19112004@gmail.com">tranngochung19112004@gmail.com</a></li>   
             </ul>
         </div>
         <div class="footer-col">
@@ -201,19 +210,19 @@ function addModal(){
                         <div class="form-group">
                             <label for="dn"> Tên đăng nhập:</label>
                             <span id="errdn" style="color: red;font-style: italic;">(*)</span>
-                            <input type="text" name="" id="dn" class="form-control" placeholder="Tên đăng nhập" value="22711231"> 
+                            <input type="text" name="" id="dn" class="form-control" placeholder="Tên đăng nhập"> 
                         </div>
                         
                         <div class="form-group">
                             <label for="mk">Mật khẩu:</label>
                         <span id="errmk" style="color: red;font-style: italic;">(*)</span>    
-                        <input type="password" class="form-control" name="" id="mk" placeholder="Mật khẩu" value="Hung123@">
+                        <input type="password" class="form-control" name="" id="mk" placeholder="Mật khẩu" >
                         </div>
-                        
+                        <a href="#" onclick="moModalDK();" style="font-size: 20px; text-decoration: none; margin-top: 20px;">Chưa có tài khoản?</a>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-toggle="modal" onclick="dangnhap()"  >Đăng nhập</button>
+                    <button class="btn btn-primary" data-bs-toggle="modal" onclick="dangnhap();"  >Đăng nhập</button>
                     <button data-bs-dismiss="modal" class="btn btn-light" id="dong" onclick="dong()" >Đóng</button>
                 </div>
             </div>
@@ -255,7 +264,7 @@ function addModal(){
                 <div class="modal-body" style="text-align: center;">
                     <div class="container-fluid">
                         <button class="btn btn-light" data-bs-target="#dangki" data-bs-toggle="modal" onclick="dongmodal()">Đăng ký Tài Khoản</button>
-                        <a href="../html/hoso1.html"><button class="btn btn-primary text-none">Đăng Ký Thành Viên</button></a>
+                        <a href="../html/hoso.html"><button class="btn btn-primary text-none">Đăng Ký Thành Viên</button></a>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -448,12 +457,35 @@ function addModal(){
     </div>
 	`);
 }
-// Thêm header
-var tenDN = "22711231"
-var pass  = "Hung123@"
+
+function moModalDK(){
+    $("#modallog").modal('hide');
+    $("#modalId").modal('show');
+}
+
+var taikhoan = {
+    username: "admin1", 
+    password: "Admin1@"
+  };
+
+//Tạo tài khoản mặc định
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem("userlogin") === null) {
+        localStorage.setItem("userlogin", JSON.stringify(taikhoan));
+    }
+});
+
+//Flag trạng thái đăng nhập, chưa có thì tạo :(
+document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem("loginStus") === null) {
+        localStorage.setItem("loginStus", "false");
+    }
+});
 
  function dangky(){
         let dem=0;
+        let username = "";
+        let pass = "";
         let user = document.getElementById("user").value;
         let regexuser = /^[a-zA-Z0-9' ]{6,15}$/;
         
@@ -462,7 +494,7 @@ var pass  = "Hung123@"
             dem++;
         } else {
             document.getElementById("err1").innerHTML = "(*)";
-            tenDN = user;
+            username = user;
             
         }
         
@@ -511,51 +543,63 @@ var pass  = "Hung123@"
             dem++
             return false;
         }else{
-            pass=matkhau;
+            pass = matkhau;
             document.getElementById("err5").innerHTML ="(*)";
             
         }
         setTimeout(function() {
             $('#dktc').modal('hide');
-                }, 1000);
+                }, 600);
         
         if(dem==0){
-        // alert('ĐĂNG KÝ THÀNH CÔNG !');
-       
-        $('#dangki').modal('hide');
-        $('#dktc').modal('show');
-        document.getElementById("user").value="";
-        document.getElementById("sdt").value="";
-        document.getElementById("password").value="";
-        document.getElementById("email").value="";
-        document.getElementById("againpassword").value="";
-
-        let logtext= document.getElementById("logtext")
-        logtext.style.display= "none";
-        let linktt= document.getElementById("linktt");
-        linktt.href="../html/thongtin.html"
-
-        linktt.setAttribute("data-bs-target", "#xemtt")
-        linktt.setAttribute("data-bs-toggle","modall")
-
-        let anhdn= document.getElementById("anhdn")
-        anhdn.style.display="inline-block"
-        let daki= document.getElementById("daki")
-        daki.style.display="none"
+            // alert('ĐĂNG KÝ THÀNH CÔNG !');
+        
+            $('#dangki').modal('hide');
+            $('#dktc').modal('show');
+            document.getElementById("user").value="";
+            document.getElementById("sdt").value="";
+            document.getElementById("password").value="";
+            document.getElementById("email").value="";
+            document.getElementById("againpassword").value="";
+            $('#dktc').modal('show');
+            setTimeout(function() {
+                $('#dktc').modal('hide');
+                    }, 1000);
+            $('#modalId').modal('hide');
+            taikhoan.username = username;
+            taikhoan.password = pass;
+            localStorage.setItem("userlogin", JSON.stringify(taikhoan));
+            localStorage.setItem("loginStus", "true");
+            changeNav();
         } 
        
 }
 
+function changeNav(){
+    let user = document.getElementById("userlink");
+    let login = document.getElementById("loginlink");
+    let signup = document.getElementById("signuplink");
+    if (user) {
+        user.style.display = "inline-block";
+    }
+    if (login) {
+        login.style.display = "none";
+    }
+    if (signup) {
+        signup.style.display = "none";
+    }
+    $("#username").html("Chào " + JSON.parse(localStorage.getItem("userlogin")).username + "!");
+}
 function dangnhap(){
     let dem=0;
     let ten = document.getElementById("dn").value
-    if(ten != tenDN || ten.trim()=="")
+    if(ten != JSON.parse(localStorage.getItem("userlogin")).username || ten.trim()=="")
     {
         dem++
     }
 
-    let pas =document.getElementById("mk").value
-    if(pas != pass || pas.trim()=="")
+    let pass =document.getElementById("mk").value
+    if(pass != JSON.parse(localStorage.getItem("userlogin")).password || pass.trim()=="")
     {
         dem++
     }
@@ -563,17 +607,14 @@ function dangnhap(){
     if(dem==0 ){
         // alert("ĐĂNG NHẬP THÀNH CÔNG")
         $('#modallog').modal('hide');
-        $('#dntc').modal('show');
         document.getElementById("dn").value="";
         document.getElementById("mk").value="";
-        let logtext= document.getElementById("logtext")
-        logtext.style.display= "none";
-        let linktt= document.getElementById("linktt");
-        linktt.href="../html/hoso1.html"
-        linktt.setAttribute("data-bs-target", "#xemtt")
-        let anhdn= document.getElementById("anhdn")
-        anhdn.style.display="inline-block"
-        anhdn.href="../html/hoso1.html/"
+        localStorage.setItem("loginStus", "true");
+        $('#dktc').modal('show');
+            setTimeout(function() {
+                $('#dktc').modal('hide');
+                    }, 600);
+        changeNav()
     }else{
         document.getElementById("tb").innerHTML= "Thông tin đăng nhập chưa đúng"
         document.getElementById("mk").value="";
@@ -583,4 +624,14 @@ function dangnhap(){
 function dong(){
         document.getElementById("dn").value="";
         document.getElementById("mk").value="";
+}
+
+//Chặn chưa đăng nhập mà mở giỏ hàng
+function moGioHang(){
+    if(localStorage.getItem("loginStus") === "false"){
+        alert("Bạn cần đăng nhập để thực hiện chức năng này!");
+        $("#modallog").modal('show');
+    }else{
+        window.open('../html/giohang.html');
+    }
 }

@@ -14,10 +14,10 @@ li>a{
     text-decoration: none;
 }
 
-.container{
-    max-width: 1000px;
+/* .container{
+    max-width: 1200px;
     margin: auto;
-}
+} */
 header img{
     width: 100%;
 }
@@ -26,16 +26,14 @@ nav{
     width: 100%;
     background: #000;
     /* margin-top: -4px; */
-    height: 70px;
+    height: auto;
 }
 nav ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* border: 1px solid red; */
-    width: 1050px;
-    margin-left: -50px;
-    margin-top: -9px;
+    width: 100%;
 }
 nav ul li, a{
     font-size: 13px;
@@ -79,8 +77,45 @@ nav ul li:nth-child(4) button{
     border: 1px solid #3f3f3f;
     border-radius: 5px;
 }
+nav ul li:nth-child(5) a:hover {
+    color: black;
+    background: white; 
 
+}
+nav ul li:nth-child(6) a:hover {
+    color: black;
+    background: white; 
 
+}
+/* nav ul li:nth-child(7) a:hover {
+    color: black;
+    background: white; 
+
+}
+nav ul li:nth-child(8) a:hover {
+    color: black;
+    background: white; 
+
+}
+nav ul li:nth-child(9) a:hover {
+    color: black;
+    background: white; 
+
+}
+nav ul li:nth-child(10) a:hover {
+    color: black;
+    background: white; 
+
+}
+nav ul li:nth-child(11) a:hover {
+    color: black;
+    background: white; 
+
+} */
+.userlink span:hover{
+    color: black;
+    background: white;
+}
 .khungnav{
     /* border: 1px solid red; */
     height: 46px;
@@ -331,7 +366,7 @@ footer{
 }
 .footer-title{
     clear: both;
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 20px;
     text-align: left;
 }
@@ -355,7 +390,7 @@ footer{
 }
 .footer-text-link{
     color: black;
-    font-size: 10px;
+    font-size: 15px;
 }
 .footer-list-link{
     margin-bottom: 2px;
@@ -365,11 +400,11 @@ footer{
 .footer-text-contact{
     text-align:left;
     margin-top: 1.5px;
-    font-size: 8px;
+    font-size: 15px;
 }
 .footer-text-call{
     margin-right: 2px;
-    font-size: 10px;
+    font-size: 15px;
 }
 .footer-list-contact{
     display: flex;

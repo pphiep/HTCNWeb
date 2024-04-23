@@ -67,7 +67,7 @@
                                             </div>
                                             <div class="form-group logout" style="text-align: center;">
                                                 <button style="font-weight: 600; width: 200px;" type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Không</button>
-                                                <button onclick="logout()" style="font-weight: 600;width: 200px;" type="button" class="btn btn-outline-danger">Xác nhận</button>
+                                                <button onclick="dangXuat();" style="font-weight: 600;width: 200px;" type="button" class="btn btn-outline-danger">Xác nhận</button>
                                             </div>
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@
                             <div class="infoUser">
                                 <div class="welcome">
                                     <div class="welcome-avatar">
-                                        <img src="../img/man.png" alt="" height="95">
+                                        <img src="../img/avatar.png" alt="" height="95">
                                     </div>
                                     <div class="welcome-content">
                                         <p style="color: #4b4848; font-size: 18px;">Xin chào</p>
@@ -117,7 +117,7 @@
                                         <div class="diemTichLuy">
                                             <p>Điểm tích lũy</p>
                                             <box-icon name='coin-stack' color='#d70018' style="height: 65px; width: 65px;"></box-icon>
-                                            <p id="valueDiemTL">0</p>
+                                            <p id="valueDiemTL">100</p>
                                         </div>
                                     </div>
                                 </div>
@@ -221,29 +221,43 @@
                                             />
                                         </div>
                                     </div>
-                                    <ul class="nav nav-tabs justify-content-center" id="tabOrder" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <a class="btn active" data-bs-toggle="tab" href="#allTab" role="tab" aria-controls="allTab" aria-selected="true">Tất cả</a>
+                                    <ul class="nav nav-tabs justify-content-center">
+                                        <li class="nav-item">
+                                            <a class="btn active" data-bs-toggle="tab" href="#allTab" role="tab" >Tất cả</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                            <a class="btn" data-bs-toggle="tab" href="#choXacNhan" role="tab" aria-controls="choXacNhan" aria-selected="false">Chờ xác nhận</a>
+                                            <a class="btn" data-bs-toggle="tab" href="#choXacNhan" role="tab">Chờ xác nhận</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                            <a class="btn" data-bs-toggle="tab" href="#daXacNhan" role="tab" aria-controls="daXacNhan" aria-selected="false">Đã xác nhận</a>
+                                            <a class="btn" data-bs-toggle="tab" href="#daXacNhan" role="tab" >Đã xác nhận</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                            <a class="btn" data-bs-toggle="tab" href="#dangVanChuyen" role="tab" aria-controls="dangVanChuyen" aria-selected="false">Đang vận chuyển</a>
+                                            <a class="btn" data-bs-toggle="tab" href="#dangVanChuyen" role="tab">Đang vận chuyển</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                            <a class="btn" data-bs-toggle="tab" href="#daGiaoHang" role="tab" aria-controls="daGiaoHang" aria-selected="false">Đã giao hàng</a>
+                                            <a class="btn" data-bs-toggle="tab" href="#daGiaoHang" role="tab">Đã giao hàng</a>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                            <a class="btn" data-bs-toggle="tab" href="#daHuy" role="tab" aria-controls="daHuy" aria-selected="false">Đã huỷ</a>
+                                            <a class="btn" data-bs-toggle="tab" href="#daHuy" role="tab">Đã huỷ</a>
                                         </li>
-                                    </ul>
-
-
-                                </div>
+                                        <div class="tab-pane fade show active" id="allTab" role="tabpanel">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Tên sản phẩm</th>
+                                                        <th>Phiên bản</th>
+                                                        <th>Số lượng</th>
+                                                        <th>Thành tiền</th>
+                                                        <th>Trạng thái</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="cartItems">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                             
                             </div>
                         </div>
                         <div id="taiKhoan" class="tab-content">
@@ -489,6 +503,25 @@
                 $('#diadiem').modal('hide');
             });   
         }
+
+        function dangXuat(){
+            alert("Đăng xuất thành công!");
+            localStorage.setItem("loginStus", "false");
+            window.open("../html/index.html");
+        }
+        let stt =1;
+        $(document).ready(function() {
+            let cartItems = JSON.parse(localStorage.getItem("listchoxuli"));
+
+            // lấy danh sách
+            if (cartItems && cartItems.length > 0) {
+                cartItems.forEach(function(product) {
+                    let row = "<tr><td>" + stt++ + "</td><td>" + product.tensanpham + "</td><td>4GB/128GB</td><td><input type='number' value='1' disabled></td><td>" + product.gia + "đ</td><td>" + "Chờ xác nhận" + "</td></tr>";
+                    $("#cartItems").append(row);
+                });
+            }
+
+        });
     </script>
 
 </body>

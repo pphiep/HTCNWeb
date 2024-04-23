@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính sách bảo hành của XShop</title>
+    <script src="http://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="../bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css"></script>
+    <script  type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/csbaohanh.js"></script>
+
+</head>
+<body>
+    <header>
+        <img src="../img/blackFriday.gif" alt="">
+    </header>
+    <!--Đoc nav-->
+    <script>Nav();</script>
+    <!--Đọc header-->
+    <script>Header();</script>
+    <div class="article-path affix">
+        <ul style="padding-left: 150px;">
+            <li class="article-list-path">
+                <a  class="article-link-path"  href="../html/index.html" style="display: flex;">
+                    <img class="article-logohome" style="padding-top: 5px;" src="../img/logo-ngoinha1.png" alt="">
+                    <p style="margin-top: 5px;margin-left: 5px;">Trang Chủ</p></a>
+            </li>
+            <li class="article-list-path">
+                <a class="article-link-path" href="../html/footer-CSBaoHanh.html"><p >&gt;    Chính sách bảo hành</p></a>
+            </li>
+        </ul>
+    </div>
+    <article class="article bg-white container">
+        <div class="article-text-start">
+                <br>
+                <p>Chào mừng Quý khách hàng!</p>
+                <p>Dưới đây là chi tiết thông tin bảo hành các sản phẩm,&nbsp;<a style="color: #f6ea07;text-decoration: none; font-size: 16px;" href="../html/index.html" target="_blank">XShop</a> luôn nỗ lực để Quý khách hài lòng và tin tưởng khi mua hàng.</p>
+                <p>Chân thành cảm ơn và mong được phục vụ Quý khách!</p>
+        </div>
+</div>
+        <div class="article-content">
+            <h3 style="text-align: center; font-weight: 600; line-height: 1.125;">CHÍNH SÁCH BẢO HÀNH</h3>
+            <div class="article-content-top row">
+                <div class="article-content-top-option col-3 bg-light">
+                    <div class="article-option-items" onclick="showContent(1)"><p>I. Bảo hành tiêu chuẩn</p></div>
+                    <div class="article-option-items" onclick="showContent(2)"><p>II. 30 ngày đổi trả miễn phí</p></div>
+                    <div class="article-option-items" onclick="showContent(3)"><p>III. Bảo hành mở rộng</p></div>
+                    <div class="article-option-child-items hidden" onclick="showChildContent(this)" data-option="1"><p>1. Bảo hành 1 đổi 1 VIP</p></div>
+                    <div class="article-option-child-items hidden" onclick="showChildContent(this)" data-option="2"><p>2. Bảo hành rơi vỡ, ngấm nước</p></div>
+                </div>
+                <div class="article-content-top-content col-9 " id="content-display" >
+
+                </div>
+            </div>
+        </div>
+        
+    
+</article>
+<script>Footer()</script>
+    <!-- js footer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var xemThemLink = document.getElementById("xem-them");
+            var menuList = document.getElementById("menu-list");
+            var isExpanded = false;
+    
+            function addNewItems() {
+                var newItemsContent = [
+                    "Chính sách xử lý dữ liệu cá nhân",
+                    "Quy chế hoạt động",
+                    "Chất lượng phục vụ",
+                    "Cảnh báo giả mạo",
+                    "Hướng dẫn mua online",
+                    "Chính sách xử lý dữ liệu cá nhân",
+                    "Quy chế hoạt động",
+                    "Chất lượng phục vụ",
+                    "Cảnh báo giả mạo",
+                    "Hướng dẫn mua online",
+                ];
+    
+                var i = 0;
+                var interval = setInterval(function() {
+                    if (i >= newItemsContent.length) {
+                        clearInterval(interval);
+                        // Hiển thị nút "Ẩn bớt" và di chuyển nó xuống dưới cùng
+                        var anBotLink = document.createElement("li");
+                        anBotLink.className = "footer-list-link";
+                        anBotLink.id = "an-bot";
+                        anBotLink.innerHTML = "<a class='footer-text-link' href='#'>Ẩn bớt<span class='rotate-up'>▲</span></a>";
+                        menuList.appendChild(anBotLink);
+    
+                        // Thêm sự kiện cho nút "Ẩn bớt"
+                        anBotLink.querySelector("a").addEventListener("click", function(event) {
+                            event.preventDefault();
+                            isExpanded = false;
+                            removeNewItems();
+                            menuList.removeChild(anBotLink);
+                            xemThemLink.style.display = "block";
+                        });
+                    } else {
+                        var newListItem = document.createElement("li");
+                        newListItem.className = "footer-list-link added-item";
+                        newListItem.innerHTML = "<a class='footer-text-link' href='#'>" + newItemsContent[i] + "</a>";
+                        menuList.appendChild(newListItem);
+                        i++;
+                    }
+                }, 7);
+            }
+    
+            function removeNewItems() {
+                var addedItems = document.querySelectorAll(".added-item");
+                var i = addedItems.length - 1;
+                var interval = setInterval(function() {
+                    if (i < 0) {
+                        clearInterval(interval);
+                    } else {
+                        menuList.removeChild(addedItems[i]);
+                        i--;
+                    }
+                }, 7);
+            }
+    
+            xemThemLink.addEventListener("click", function(event) {
+                event.preventDefault();
+                if (!isExpanded) {
+                    addNewItems();
+                    xemThemLink.style.display = "none";
+                    isExpanded = true;
+                }
+            });
+        });
+    </script>
+
+<!-- Modal Đăng nhập, Đăng ký -->
+    <div class="modal" id="modallog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: rgba(0,0,0,0.8);">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="font-size: 25px; padding-top: 5px; color: #c4b22a">
+                        Đăng nhập 
+                     </h5>
+                     <button class="btn btn-close btn-light" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div>
+                            <span id="tb" style="color: red;font-style: italic;"></span></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="dn"> Tên đăng nhập:</label>
+                            <span id="errdn" style="color: red;font-style: italic;">(*)</span>
+                            <input type="text" name="" id="dn" class="form-control" placeholder="Tên đăng nhập"> 
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mk">Mật khẩu:</label>
+                        <span id="errmk" style="color: red;font-style: italic;">(*)</span>    
+                        <input type="password" class="form-control" name="" id="mk" placeholder="Mật khẩu">
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-toggle="modal" onclick="dangnhap()" >Đăng nhập</button>
+                    <button data-bs-dismiss="modal" class="btn btn-light" id="dong" onclick="dong()" >Đóng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal" id="dangki">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: rgba(0,0,0,0.8);" >
+                <div class="modal-header">
+                    <h3 style="font-size: 25px; padding-top: 5px; color: #c4b22a;">
+                        Đăng ký
+                    </h3>
+                    <button class=" btn btn-light btn-close"  data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <p id="tb" style="text-align: center; color: white; font-size: 15px;"></p>
+                            <label for="user">Tên người dùng:</label>
+                            <span id="err1" style="color: red;font-style: italic;"></span>
+                            <input type="text" id="user"  class="form-control" placeholder="Nhập tên người dùng(gồm chữ và số)" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sdt">Số điện thoại:</label>
+                            <span id="err2" style="color: red;font-style: italic;"></span>
+                            <input type="tel" id="sdt" placeholder="Số điện thoại" class="form-control" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <span id="err3" style="color: red;font-style: italic;"></span>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password"> Mật khẩu:</label>
+                            <span id="err4" style="color: red;font-style: italic;"></span>
+                            <input type="password" id="password" class="form-control" placeholder="Mật khẩu có ít nhất một chữ hoa, một chữ thường và một ký tự đặc biệt" >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="againpassword">Nhập lại mật khẩu:</label>
+                            <span id="err5" style="color: red;font-style: italic;"></span>
+                            <input type="password" id="againpassword" class="form-control" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="form-group" style="margin-left: 300px;margin-top: 10px;">
+                            <input id="closemodal" type="button" class="btn btn-primary" onclick="dangky()" value="Đăng ký"></input>
+                            <button data-bs-dismiss="modal" class="btn btn-light" id="dong" onclick="dong()">Đóng</button>
+                        </div>
+                    </form>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

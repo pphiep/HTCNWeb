@@ -1,5 +1,5 @@
-var tenDN = "22711231"
-var pass  = "Hung123@"
+var tenDN = "admin1"
+var pass  = "Admin1@"
 
  function dangky(){
         let dem=0;
@@ -107,6 +107,7 @@ function dangnhap(){
         let anhdn= document.getElementById("anhdn")
         anhdn.style.display="inline-block"
         anhdn.href="../html/hoso1.html/"
+        return dem;
     }else{
         document.getElementById("tb").innerHTML= "Thông tin đăng nhập chưa đúng"
         document.getElementById("mk").value="";

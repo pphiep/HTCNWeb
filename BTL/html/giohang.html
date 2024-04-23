@@ -85,20 +85,18 @@
         $(document).ready(function() {
             let cartItems = JSON.parse(localStorage.getItem("cartItems"));
 
-            // Kiểm tra xem mảng có sản phẩm không
+            // lấy danh sách
             if (cartItems && cartItems.length > 0) {
-                // Lặp qua mỗi sản phẩm trong mảng
                 cartItems.forEach(function(product) {
                     let row = "<tr><td>" + stt++ + "</td><td>" + product.tensanpham + "</td><td>4GB/128GB</td><td><input type='number' value='1' disabled></td><td>" + product.gia + "đ</td></tr>";
                     $("#cartItems").append(row);
                     
-                    // Tính tổng tiền
                     let gias = product.gia.replace(/\./g, "");
                     tongtien += parseFloat(gias);
                 });
             }
             $("#dtl").html(tongtien * 0.01);
-            // Hiển thị tổng tiền
+            // Định dạng tiền
             $("#tongtien").html(tongtien.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
 
             });
@@ -107,7 +105,8 @@
                 $("#errgh").html("Vui lòng chọn hình thức nhận hàng!");
             } else{
                 $("#errgh").html("");
-                alert("Đặt hành thành công!");
+                alert("Đặt hàng thành công! Vào phần thông tin để theo dõi tình trạng hàng!");
+                localStorage.setItem("listchoxuli", localStorage.getItem("cartItems"));
                 localStorage.removeItem("cartItems");
                 $("#cartItems").empty();
                 $("#tongtien").html(0);
