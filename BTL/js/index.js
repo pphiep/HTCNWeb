@@ -6,7 +6,7 @@ function Nav() {
             <ul>
                 <li style="height: 50px;"><a href="../html/index.html" style="line-height: 50px;">XShop</a></li>
                 <li><a  data-bs-target="#diadiem" data-bs-toggle="modal" href="" style="text-decoration: none;"><p style="color: white; font-size: 10px; text-decoration: none; padding-top: 15px;">Xem giá, khuyến mãi tại <br> <span style="font-size: 10px;" id="Diemmuadt">Hồ Chí Minh...</span><i class="fas fa-sort-down"></i> </p></a></li>
-                <li> <a href="# "><input type="text" class="search input" placeholder="Tìm kiếm...." style="padding-left: 6px;"> <i class="fas fa-search"></a></i></li>
+                <li> <a href="# "><input type="text" id="searchtext" class="search input" placeholder="Tìm kiếm...." style="padding-left: 6px;"> <i class="fas fa-search"></a></i></li>
                 <li><button onclick="moGioHang();"><i class="fas fa-shopping-cart"></i> Giỏ hàng</button></li>
                 <li class="khungnav"><a href="../html/index.html" class="textnone">Trang Chủ</a></li>
                 <li class="khungnav"><a href="../html/GioiThieu.html" class="textnone">Giới thiệu</a></li>
@@ -31,27 +31,45 @@ function Nav() {
     dangky();
     dangnhap();
 }
-// Thêm header
 
+function navsearch(text){
+    $("#searchtext").val(text);
+
+    var enter = $.Event("keydown", { 
+        keyCode: 13,
+        which: 13,
+        key: "Enter"
+    });
+
+    var enter2 = $.Event("keyup", { 
+        keyCode: 13,
+        which: 13,
+        key: "Enter"
+    });
+
+    $("#searchtext").trigger(enter);
+    $("#searchtext").trigger(enter2);
+}
+// Thêm header
 function Header() {
     document.write(` 
     <div class="menu" style="margin-bottom: 10px;">
          <ul class="main-menu" style="justify-content: space-between;">
             <li>
-                <a href="#iphone" class="textmenu" onclick="showProductsByCategory2('iPhone')"> iPhone <i class="fas fa-sort-down"></i></a>
+                <a href="#" class="textmenu" onclick="navsearch('Iphone');"> iPhone <i class="fas fa-sort-down"></i></a>
                 <ul class="sup-menu" style="width:151px;">
-                    <li style="width: 149px;"><a href="#sec" class="liip" onclick="showProductsByCategory2('iPhone 15 Pro Max')">iPhone 15 Pro Max</a>       
+                    <li style="width: 149px;"><a href="#sec" class="liip" onclick="showCT('iPhone 15 Pro Max');">iPhone 15 Pro Max</a>       
                     </li>
-                    <li style="width: 149px;"><a href="#sec" class="liip" onclick="showProductsByCategory2('iPhone14')">iPhone14 </a>
+                    <li style="width: 149px;"><a href="#sec" class="liip">iPhone14 </a>
                         <ul class="sup-menu" style="width: 200px;">
-                            <li><a href="#sec" onclick="showProductsByCategory2('iPhone14 Pro Max')">iPhone14 Pro Max</a></li>
-                            <li><a href="#sec" onclick="showProductsByCategory2('iPhone14 Pro')">iPhone14 Pro </a></li>
-                            <li><a href="#sec" onclick="showProductsByCategory2('iPhone14 Plus')">iPhone14 Plus</a></li>
+                            <li onclick="showCT('iPhone 14 Pro Max');"><a href="#sec">iPhone14 Pro Max</a></li>
+                            <li onclick="showCT('iPhone 14 Pro Max');"><a href="#sec">iPhone14 Pro </a></li>
+                            <li onclick="showCT('iPhone 14 Pro Max');"><a href="#sec">iPhone14 Plus</a></li>
                             
                         </ul>
                     </li>
-                    <li style="width: 149px;"><a href="#sec" class="liip">iPhone13 Pro Max</a></li>
-                    <li style="width: 149px;"><a href="#sec" class="liip">iPhone12 Pro Max</a></li>
+                    <li style="width: 149px;" onclick="showCT('iPhone 13 Pro Max');"><a href="#sec" class="liip">iPhone13 Pro Max</a></li>
+                    <li style="width: 149px;" onclick="showCT('iPhone 12 Pro Max');"><a href="#sec" class="liip">iPhone12 Pro Max</a></li>
                     <li style="width: 149px;"><a href="#sec">iPhone11 Pro Max</a></li>
                 </ul>
             </li>
