@@ -377,80 +377,78 @@
                 </div>
             </div>
         </div>
-    
-        <!--Modal đặt ngay-->
-        <div class="modal" id="dathang">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content" style="color: black;">
-                    <div class="modal-header">
-                        <h2>Thông tin khách hàng</h2>
-                        <button type="button" class="closemodal" data-bs-dismiss="modal">&times;</button>
+    </section>
+    <!--Modal đặt ngay-->
+    <div class="modal" id="dathang">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="color: black;">
+                <div class="modal-header">
+                    <h2>Thông tin khách hàng</h2>
+                    <button type="button" class="closemodal" data-bs-dismiss="modal">&times;</button>
+                    
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group">
+                            <span style="color: red;" id="errthongtin"></span>
+                            <input type="text" class="form-control" placeholder="Họ tên" id="txthoten">
+                            <span style="color: red;" id="errhoten"></span>
+                        </div>
                         
-                    </div>
-                    <div class="modal-body">
-                        <form action="#">
-                            <div class="form-group">
-                                <span style="color: red;" id="errthongtin"></span>
-                                <input type="text" class="form-control" placeholder="Họ tên" id="txthoten">
-                                <span style="color: red;" id="errhoten"></span>
+                        <div class="row form-group mt-3 mb-4">
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="Số điện thoại" id="txtsodienthoai">
+                            <span style="color: red;" id="errsdt"></span>
                             </div>
+                        <div class="col-6">
+                            <select name="gt" class="form-select" id="gioitinh">
+                            <option value="" selected="selected">Chọn giới tính</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            </select>
+                            <span style="color: red;" id="errgt"></span>
+                        </div>
+                        </div>
+                        <div class="form-group mt-3 mb-4"><input type="email" class="form-control" placeholder="Email" id="txtemail">
+                            <span style="color: red;" id="erremail"></span>
+                        </div>
+                        
+                        <div class="row form-group mt-3 mb-4">
+                        <div class="col-6">
+                            <select name="tp" class="form-select" id="thanhpho">
+                            <option value="" selected="selected">Chọn thành phố</option>
+                            <option value="Thành phố Hồ Chí Minh" >Thành phố Hồ Chí Minh</option>
+                            <option value="Thành phố Hà Nội" >Thành phố Hà Nội</option>
+                            <option value="Tân An" >Tân An</option>
+                            <option value="Thành phố Đà Nẵng" >Thành phố Đà Nẵng</option>
+                            </select>
+                            <span style="color: red;" id="errtp"></span>
+                        </div>
+                        <div class="col-6">
+                            <select name="Quan" class="form-select" id="quan" disabled>
                             
-                            <div class="row form-group mt-3 mb-4">
-                            <div class="col-6">
-                                <input type="text" class="form-control" placeholder="Số điện thoại" id="txtsodienthoai">
-                                <span style="color: red;" id="errsdt"></span>
-                                </div>
-                            <div class="col-6">
-                                <select name="gt" class="form-select" id="gioitinh">
-                                <option value="" selected="selected">Chọn giới tính</option>
-                                <option value="Nam">Nam</option>
-                                <option value="Nữ">Nữ</option>
-                                </select>
-                                <span style="color: red;" id="errgt"></span>
-                            </div>
-                            </div>
-                            <div class="form-group mt-3 mb-4"><input type="email" class="form-control" placeholder="Email" id="txtemail">
-                                <span style="color: red;" id="erremail"></span>
-                            </div>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiachi">
+                           
+                        </div>
+                         <span style="color: red;" id="errdiachi"></span>
+                         
+                        <div class="form-group">
+                            <hr>
+                            Tôi đã đọc và đồng ý với <span style="color: orange; font-weight: bold;">CHÍNH SÁCH</span> của cửa hàng
                             
-                            <div class="row form-group mt-3 mb-4">
-                            <div class="col-6">
-                                <select name="tp" class="form-select" id="thanhpho">
-                                <option value="" selected="selected">Chọn thành phố</option>
-                                <option value="Thành phố Hồ Chí Minh" >Thành phố Hồ Chí Minh</option>
-                                <option value="Thành phố Hà Nội" >Thành phố Hà Nội</option>
-                                <option value="Tân An" >Tân An</option>
-                                <option value="Thành phố Đà Nẵng" >Thành phố Đà Nẵng</option>
-                                </select>
-                                <span style="color: red;" id="errtp"></span>
-                            </div>
-                            <div class="col-6">
-                                <select name="Quan" class="form-select" id="quan" disabled>
-                                
-                                </select>
-                            </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Địa chỉ" id="txtdiachi">
-                               
-                            </div>
-                             <span style="color: red;" id="errdiachi"></span>
-                             
-                            <div class="form-group">
-                                <hr>
-                                Tôi đã đọc và đồng ý với <span style="color: orange; font-weight: bold;">CHÍNH SÁCH</span> của cửa hàng
-                                
-                            </div>
-                    </div>
-                    <div class="modal-footer" style="display: flex; flex-direction: row;">
-                        <input id="xacnhan" type="submit" type="button" class="btn btn-primary" value="Xác nhận"></input>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>
-                    </div>
+                        </div>
+                </div>
+                <div class="modal-footer" style="display: flex; flex-direction: row;">
+                    <input id="xacnhan" type="submit" type="button" class="btn btn-primary" value="Xác nhận"></input>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Hủy</button>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
    <script>Footer();</script>
     <script>
         $(document).ready(function() {
@@ -479,6 +477,8 @@
                 $("#giast").text((giaBan - (giaBan * 0.08)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
                 $("#giatq").text(((giaBan + 1000000)-((giaBan + 1000000) * 0.07)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }));
                 document.title = product["Tên sản phẩm"];
+            }else{
+                window.location.href = '../html/index.html';
             }
             localStorage.removeItem("product");
     });
@@ -669,29 +669,29 @@
                 $("#quan").append(text);
               }
           });
-          let i = 1;
           $("#xacnhan").click(function (e) { 
             e.preventDefault();
             if (isValiddiachi && isValidemail && isValidgioitinh && isValidhoten && isValidsodienthoai && isValidthanhpho) {
-                 let txthoten = $("#txthoten").val();
-                let txtsodienthoai = $("#txtsodienthoai").val();
-                let gioitinh = $("#gioitinh").val();
-                let txtemail = $("#txtemail").val();
-                let thanhpho = $("#thanhpho option:selected").html();
-                let txtdiachi = $("#txtdiachi").val();
-                let quan = $("#quan").val();
-
-                let newrow = "<tr> <td>"+ i +"</td> <td>"+ txthoten +"</td><td>"+ txtsodienthoai
-                    +"</td><td>"+gioitinh +"</td><td>"+ txtemail+"</td><td>"+ thanhpho
-                        +"</td><td>"+ quan+"</td><td>"+ txtdiachi+"</td> </tr>"
-                
-                i++;
-                $("#tbl").append(newrow);
+                let tensanpham = $('#tendienthoai').html();
+                let gias = 0;
+                gias = $("#giast").html(); 
+                let gia = gias.replace(/(&nbsp;|₫)/g, "");    
+                let product = {
+                    tensanpham: tensanpham,
+                    gia: gia
+                };
+                let listchoxuli = JSON.parse(localStorage.getItem('listchoxuli'));
+                if (!listchoxuli) {
+                    listchoxuli = [];
+                } 
+                listchoxuli.push(product);
+                //Lưu
+                localStorage.setItem('listchoxuli', JSON.stringify(listchoxuli));
+                alert("Đặt hàng thành công! Truy cập vào thông tin tài khoản để theo dõi đơn hàng.")
                 $("#dathang").modal('hide');
             } else {
-                $("#errthongtin").html("Vui lòng nhập đúng và đầy đủ thông tin");
+                $("#errthongtin").html("Vui lòng nhập đầy đủ thông tin");
             }
-           
           });
         });
         function checkDatHang(){
