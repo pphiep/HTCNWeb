@@ -385,10 +385,12 @@
                     <div class="modal-header">
                         <h2>Thông tin khách hàng</h2>
                         <button type="button" class="closemodal" data-bs-dismiss="modal">&times;</button>
+                        
                     </div>
                     <div class="modal-body">
                         <form action="#">
                             <div class="form-group">
+                                <span style="color: red;" id="errthongtin"></span>
                                 <input type="text" class="form-control" placeholder="Họ tên" id="txthoten">
                                 <span style="color: red;" id="errhoten"></span>
                             </div>
@@ -514,6 +516,12 @@
     </script>
     <script>
         $(document).ready(function () {
+            let isValidhoten = false;
+            let isValidsodienthoai = false;
+            let isValidgioitinh = false;
+            let isValidemail = false;
+            let isValidthanhpho = false;
+            let isValiddiachi = false;
             $("#txthoten").blur(function (e) { 
                 e.preventDefault();
                 let txthoten = $("#txthoten").val();
@@ -521,10 +529,13 @@
                 
                 if (txthoten == '') {
                     $("#errhoten").html("Họ tên không được để trống.");
+                    isValidhoten = false;
                 } else if (!regtxthoten.test(txthoten)) {
                     $("#errhoten").html("Họ tên phải từ 2 ký tự trở lên và viết hoa chữ cái đầu.");
+                    isValidhoten = false;
                 } else {
                     $("#errhoten").html("");  
+                    isValidhoten = true;
                 }
             });
             $("#txtsodienthoai").blur(function (e) { 
@@ -533,10 +544,13 @@
                 let regtxtsodienthoai = /^(09|08|07|06|05|04|03|02)[0-9]{8}$/
                 if (txtsodienthoai == '') {
                     $("#errsdt").html("Số điện thoại không được để trống.");
+                                        isValidsodienthoai = false;
                 } else if (!regtxtsodienthoai.test(txtsodienthoai)) {
                     $("#errsdt").html("Số điện thoại không hợp lệ.");
+                                        isValidsodienthoai = false;
                 } else {
                     $("#errsdt").html("");
+                                        isValidsodienthoai = true;
                 }
             });
             $("#gioitinh").blur(function (e) { 
@@ -544,8 +558,14 @@
                 let gioitinh = $("#gioitinh").val();
                 if (gioitinh == '') {
                     $("#errgt").html("Vui lòng chọn giới tính.");
+                                        isValidgioitinh = false;
+                    
+
                 } else {
                     $("#errgt").html("");
+                           
+                    isValidgioitinh = true;
+
                 }
             });
             $("#txtemail").blur(function (e) { 
@@ -554,10 +574,13 @@
                 let regtxtemail = /^[A-Za-z0-9]+\@[a-zA-Z0-9]+\.(com)$/
                 if (txtemail == '') {
                     $("#erremail").html("Email không được để trống.");
+                                        isValidemail = false;
                 } else if (!regtxtemail.test(txtemail)) {
                     $("#erremail").html("Email không đúng cú pháp.");
+                                        isValidemail = false;
                 } else {
                     $("#erremail").html("");
+                                        isValidemail = true;
                 }
             });
             $("#thanhpho").blur(function (e) { 
@@ -565,8 +588,14 @@
                 let thanhpho = $("#thanhpho").val();
                 if (thanhpho == '') {
                     $("#errtp").html("Vui lòng chọn thành phố.");
+                                        isValidthanhpho = false;
+                   
+
                 } else {    
                     $("#errtp").html("");
+            
+                    isValidthanhpho = true;
+
                 }
             });
             $("#txtdiachi").blur(function (e) { 
@@ -574,8 +603,14 @@
                 let txtdiachi = $("#txtdiachi").val();
                 if (txtdiachi == '') {
                     $("#errdiachi").html("Địa chỉ không được để trống.");
+                                        isValiddiachi = false;
+                   
+
                 } else {    
                     $("#errdiachi").html("");
+                  
+                    isValiddiachi = true;
+
                 }
             });
           $("#thanhpho").change(function (e) { 
@@ -639,7 +674,8 @@
           let i = 1;
           $("#xacnhan").click(function (e) { 
             e.preventDefault();
-            let txthoten = $("#txthoten").val();
+            if (isValiddiachi && isValidemail && isValidgioitinh && isValidhoten && isValidsodienthoai && isValidthanhpho) {
+                 let txthoten = $("#txthoten").val();
                 let txtsodienthoai = $("#txtsodienthoai").val();
                 let gioitinh = $("#gioitinh").val();
                 let txtemail = $("#txtemail").val();
@@ -654,6 +690,10 @@
                 i++;
                 $("#tbl").append(newrow);
                 $("#dathang").modal('hide');
+            } else {
+                $("#errthongtin").html("Vui lòng nhập đúng và đầy đủ thông tin");
+            }
+           
           });
         });
       </script>
