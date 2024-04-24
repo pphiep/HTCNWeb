@@ -60,68 +60,67 @@ function Header() {
                 <ul class="sup-menu" style="width:151px;">
                     <li style="width: 149px;"><a href="#sec" class="liip" onclick="showCT('iPhone 15 Pro Max');">iPhone 15 Pro Max</a>       
                     </li>
-                    <li style="width: 149px;"><a href="#sec" class="liip">iPhone14 </a>
+                    <li style="width: 149px;"><a href="#">iPhone14 Series</a>
                         <ul class="sup-menu" style="width: 200px;">
-                            <li onclick="showCT('iPhone 14 Pro Max');"><a href="#sec">iPhone14 Pro Max</a></li>
-                            <li onclick="showCT('iPhone 14 Pro Max');"><a href="#sec">iPhone14 Pro </a></li>
-                            <li onclick="showCT('iPhone 14 Pro Max');"><a href="#sec">iPhone14 Plus</a></li>
+                            <li onclick="showCT('iPhone 14 Pro Max');"><a href="#">iPhone14 Pro Max</a></li>
+                            <li onclick="showCT('iPhone 14 Pro');"><a href="#">iPhone14 Pro </a></li>
+                            <li onclick="showCT('iPhone 14 Plus');"><a href="#">iPhone14 Plus</a></li>
                             
                         </ul>
                     </li>
-                    <li style="width: 149px;" onclick="showCT('iPhone 13 Pro Max');"><a href="#sec" class="liip">iPhone13 Pro Max</a></li>
-                    <li style="width: 149px;" onclick="showCT('iPhone 12 Pro Max');"><a href="#sec" class="liip">iPhone12 Pro Max</a></li>
-                    <li style="width: 149px;"><a href="#sec">iPhone11 Pro Max</a></li>
+                    <li style="width: 149px;" onclick="showCT('iPhone 13 Pro Max');"><a href="#" class="liip">iPhone13 Pro Max</a></li>
+                    <li style="width: 149px;" onclick="showCT('iPhone 12 Pro Max');"><a href="#" class="liip">iPhone12 Pro Max</a></li>
+                    <li style="width: 149px;" onclick="showCT('iPhone 11 Pro Max');"><a href="#sec">iPhone11 Pro Max</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#sec" class="textmenu"> Vivo <i class="fas fa-sort-down"></i></a>
-                <ul class="sup-menu" style="width: 151px;">
-                    <li class="livv" style="width: 151px"><a href="#sec" >Vivo Y17s</a></li>
-                    <li class="livv" style="width: 151px"><a href="#sec" >Vivo Y22</a>
-                        <ul class="sup-menu " style="width: 200px;">
-                            <li><a href="#sec">Vivo Y22x</a></li>
-                            <li><a href="#sec">Vivo Y22y </a></li>
-                            <li><a href="#sec">Vivo Y22z</a></li>
-                            
-                        </ul></li>
-                    <li class="livv" style="width: 151px"><a href="#sec" >Vivo V29 5G</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#oppo" class="textmenu"> OPPO <i class="fas fa-sort-down"></i></a>
+                <a href="#oppo" class="textmenu" onclick="navsearch('Oppo');"> OPPO <i class="fas fa-sort-down"></i></a>
                 <ul class="sup-menu" style="width: 200px;">
-                    <li style="width: 200px;"><a href="#sec">OPPO Reno11</a></li>
-                    <li style="width: 200px;"><a href="#sec">OPPO A18</a></li>
-                    <li style="width: 200px;"><a href="#sec">OPPO Find N2</a></li>
+                    <li style="width: 200px;" onclick="showCT('Oppo Reno 9');"><a href="#">Oppo Reno 9</a></li>
+                    <li style="width: 149px;"><a href="#">Oppo reno 10 Series</a>
+                        <ul class="sup-menu" style="width: 200px;">
+                            <li onclick="showCT('Oppo Reno 10 Pro Plus');"><a href="#">Oppo Reno 10 Pro Plus</a></li>
+                            <li onclick="showCT('Oppo Reno 10 Pro');"><a href="#">Oppo Reno 10 Pro</a></li>
+                            <li onclick="showCT('Oppo Reno 10');"><a href="#">Oppo Reno 10</a></li>
+                        </ul>
+                    </li>
+                    <li style="width: 200px;" onclick="showCT('Oppo Reno 8');"><a href="#">Oppo Reno 8</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#samsung" class="textmenu"> Samsung <i class="fas fa-sort-down"></i></a>
+                <a href="#samsung" class="textmenu" onclick="navsearch('Samsung');"> Samsung <i class="fas fa-sort-down"></i></a>
                 <ul class="sup-menu" style="width: 203px;">
-                    <li><a href="#sec">Samsung Galaxy S24 </a></li>
-                    <li><a href="#sec">Samsung Galaxy S23</a></li>
-                    <li><a href="#sec">Samsung Galaxy Z Fold5</a></li>
-                    <li><a href="#sec">Samsung Galaxy Z Fild5</a></li>
+                    <li><a href="#" onclick="showCT('Samsung S22 Ultra');">Samsung S22 Ultra</a></li>
+                    <li><a href="#" onclick="showCT('Samsung Note 20');">Samsung Note 20</a></li>
+                    <li><a href="#" onclick="showCT('Samsung S10+');">Samsung S10+</a></li>
+                    <li><a href="#" onclick="showCT('Samsung Note 10');">Samsung Note 10</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#sec" class="textmenu"> Xiaomi <i class="fas fa-sort-down"></i></a>
+                <a href="#sec" class="textmenu" onclick="navsearch('Xiaomi');"> Xiaomi <i class="fas fa-sort-down"></i></a>
                 <ul class="sup-menu" style="width: 200px;">
-                    <li><a href="#sec">Xiaomi 14</a></li>
-                            <li style="width: 250px;"><a href="#" style="width: 250px;">Xiaomi Redmi Note 13 Pro</a></li>
-                            <li><a href="#sec">Xiaomi 13T Pro</a></li>
-                            <li><a href="#sec">Xiaomi Redmi A2 series</a></li>
+                    <li><a href="#" onclick="showCT('Xiaomi Redmi Note 11');">Xiaomi Redmi Note 11</a></li>
+                    <li style="width: 250px;" onclick="showCT('Xiaomi Mi 11T');"><a href="#" style="width: 250px;">Xiaomi Mi 11T</a></li>
+                    <li><a href="#" onclick="showCT('Redmi Note 11S');">Redmi Note 11S</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#sec" class="textmenu"> Redmi <i class="fas fa-sort-down"></i></a>
+                <a href="#sec" class="textmenu" onclick="navsearch('Realme');"> Realme<i class="fas fa-sort-down"></i></a>
                 <ul class="sup-menu" style="width: 180px;">
-                    <li><a href="#sec" class="">Realmi Note 50</a></li>
-                    <li><a href="#sec" class="">Realmi C55</a></li>
-                    <li><a href="#sec" class="">Realmi 11</a></li>
-                    <li><a href="#sec" class="">Realmi C30s</a></li>
+                    <li onclick="showCT('Realme GT 2 Pro');"><a href="#">Realme GT 2 Pro</a></li>
+                    <li onclick="showCT('Realme 9 Pro+');"><a href="#">Realme 9 Pro+</a></li>
+                    <li onclick="showCT('Realme C35');"><a href="#">Realme C35</a></li>
+                    <li onclick="showCT('Realme GT Neo 3');"><a href="#">Realme GT Neo 3</a></li>
                 </ul>
-            </li>        
+            </li> 
+            <li>
+                <a href="#" class="textmenu" onclick="navsearch('Vivo');"> Vivo <i class="fas fa-sort-down"></i></a>
+                <ul class="sup-menu" style="width: 151px;">
+                    <li class="livv" style="width: 151px" onclick="showCT('Vivo X70 Pro');"><a href="#" >Vivo X70 Pro</a></li>
+                    <li class="livv" style="width: 151px" onclick="showCT('Vivo X60 Pro');"><a href="#" >Vivo X60 pro</a></li>
+                    <li class="livv" style="width: 151px" onclick="showCT('Vivo V23 5G');"><a href="#" >Vivo V23 5G</a></li>
+                </ul>
+            </li>       
          </ul>
     </div>`);
 }
@@ -254,8 +253,8 @@ function addModal(){
                 <div class="modal-header">
                     <button data-bs-dismiss="modal" class="btn btn-close btn-light" style="color: white;"></button>
                 </div>
-                <div class="modal-body text-white " style="text-align: center; font-weight: bold; font-size: 30px;      ">
-                    <p>Đăng nhập thành công</p>
+                <div class="modal-body text-white " style="text-align: center; font-weight: bold; font-size: 30px;">
+                    <p style="color: white;">Đăng nhập thành công</p>
                 </div>
             </div>
         </div>
@@ -361,7 +360,7 @@ function addModal(){
                     <button data-bs-dismiss="modal" class="btn btn-close" style="color: white;"></button>
                 </div>
                 <div class="modal-body text-white " style="text-align: center; font-weight: bold; font-size: 30px;      ">
-                    <p>Đăng ký thành công</p>
+                    <p style="color: white;">Đăng ký thành công</p>
                 </div>
             </div>
         </div>
@@ -652,4 +651,16 @@ function moGioHang(){
     }else{
         window.open('../html/giohang.html');
     }
+}
+//Show chi tiết sản phẩm-->
+function showCT(st) {
+    $.getJSON("../data/data.js", function(data) {
+        var product = data.find(function(item) {
+            return item["Tên sản phẩm"].toLowerCase() === st.toLowerCase();
+        });
+        if(product) {
+            localStorage.setItem("product", JSON.stringify(product));
+            window.location.href = "../html/chitietsanpham.html";
+        } 
+    });
 }

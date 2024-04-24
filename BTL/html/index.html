@@ -19,7 +19,6 @@
                 $("html, body").animate({ // Cuộn trang xuống phần "anhsec"
                     scrollTop: $("#sec").offset().top
                 }, 10);
-            } else {
                 var searchText = $(this).val().toLowerCase(); // Lấy giá trị nhập vào và chuyển về chữ thường
                 $(".anhsec").filter(function(){ // Lọc các sản phẩm
                     $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1); // Ẩn/hiện sản phẩm phù hợp với từ khóa tìm kiếm
@@ -30,14 +29,14 @@
                 var productsPerRow = 4; // Số sản phẩm mỗi hàng
                 var rows = Math.ceil(visibleProducts / productsPerRow); // Số hàng
                 var newHeight = rows * ($('.anhsec').outerHeight() + 10); // Tính toán chiều cao mới
-                $('.khunggt').height(newHeight); // Đặt chiều cao mới cho khunggt
+                $('.khunggt').height(newHeight + 50); // Đặt chiều cao mới cho khunggt
         });
         // Lắng nghe sự kiện khi click vào các link trên thanh menu
     $('.liip').on('click', function(event){
         event.preventDefault(); // Ngăn chặn hành động mặc định của link
         var category = $(this).text(); // Lấy danh mục sản phẩm từ nội dung của link
         searchProducts(category); // Gọi hàm tìm kiếm sản phẩm với danh mục đã chọn
-    });
+    }); 
 
     // Hàm tìm kiếm sản phẩm
     function searchProducts(category) {
@@ -51,7 +50,7 @@
         var productsPerRow = 4; // Số sản phẩm mỗi hàng
         var rows = Math.ceil(visibleProducts / productsPerRow); // Số hàng
         var newHeight = rows * ($('.anhsec').outerHeight() + 10); // Tính toán chiều cao mới
-        $('.khunggt').height(newHeight); // Đặt chiều cao mới cho khunggt
+        $('.khunggt').height(newHeight + 500); // Đặt chiều cao mới cho khunggt
         
     }  
     }
@@ -137,7 +136,7 @@
                 </button>
             </div>
             <img  id="sec"
-            src="https://cdn.tgdd.vn/2024/03/campaign/TGDD-Banner-Flash-sale-1-1200x120.gif" alt="" style="width: 85%px; height: 90px;">
+            src="../img/Banner-Flash.gif" alt="" style="width: 85%px; height: 90px;">
             <div style="display: flex; position: relative; margin-left: 450px; margin-top: -32px; margin-bottom: 9px;">
                 <button class="khungtg" style="margin-right: 10px;"> Đang diễn ra 30/4</button>
                 <button class="khungtg">Sắp diễn ra 1/5</button>
@@ -308,9 +307,9 @@
                                 <b style="color: red;">10.600.000đ</b>
                             </div>
                         </div>
-                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Redmi Note 11S');">
-                            <img src="../img/redmi11s.png" alt="Redmi Note 11S" >
-                            <h6>Redmi Note 11S</h6>
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Xiaomi Redmi Note 11S');">
+                            <img src="../img/redmi11s.png" alt="Xiaomi Redmi Note 11S" >
+                            <h6>Xiaomi Redmi Note 11S</h6>
                             <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
                                 Giảm giá mạnh <br>
                                 <b style="text-decoration-line:line-through;">5.590.000đ</b><span>-11%</span><br>
@@ -318,6 +317,47 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="rowgt" style="border-bottom: none;">
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Realme GT 2 Pro');">
+                            <img src="../img/realmegt2.png" alt="Vivo X60 pro" >
+                            <h6>Realme GT 2 Pro</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">23.990.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">22.990.000đ</b>
+                            </div>
+                        </div>
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Realme 9 Pro+');">
+                            <img src="../img/realme9plus.png" alt="Realme 9 Pro+" >
+                            <h6>Realme 9 Pro+</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">15.990.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">14.990.000đ</b>
+                            </div>
+                        </div>
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Realme C35');">
+                            <img src="../img/realmec35.png" alt="Realme C35">
+                            <h6>Realme C35</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">4.999.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">3.999.000đ</b>
+                            </div>
+                        </div>
+                        <div class=" bg-white anhsec" style="margin-left: 1px;" onclick="showCT('Realme GT Neo 3');">
+                            <img src="../img/realmegt3.png" alt="Realme GT Neo 3" >
+                            <h6>Realme GT Neo 3</h6>
+                            <div style="margin-left: 5px;font-size: 15px; border-top: 1px solid gray;">
+                                Giảm giá mạnh <br>
+                                <b style="text-decoration-line:line-through;">13.990.000đ</b><span>-11%</span><br>
+                                <b style="color: red;">12.990.000đ</b>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
         </section>
     </article>
@@ -446,19 +486,5 @@
             }
         </script>
 
-        <!--Show chi tiết sản phẩm-->
-      <script>
-        function showCT(st) {
-            $.getJSON("../data/data.js", function(data) {
-                var product = data.find(function(item) {
-                    return item["Tên sản phẩm"].toLowerCase() === st.toLowerCase();
-                });
-                if(product) {
-                    localStorage.setItem("product", JSON.stringify(product));
-                    window.open("../html/chitietsanpham.html", "_self");
-                } 
-            });
-        }
-      </script>
 </body>
 </html>

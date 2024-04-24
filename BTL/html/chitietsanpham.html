@@ -14,7 +14,25 @@
     <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/index.js"></script>
 </head>
-
+<style>
+    .chonCauHinh {
+        margin-bottom: 10px;
+    }
+    .item-CH.active {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
+<script>
+    function selectOption(event) {
+        const target = event.target;
+        const siblings = target.parentElement.querySelectorAll('.item-CH');
+        siblings.forEach((sibling) => {
+            sibling.classList.remove('active');
+        });
+        target.classList.add('active');
+    }
+</script>
 <body>
     <header>
         <img src="../img/blackFriday.gif" alt="">
@@ -22,7 +40,7 @@
     <!--Đoc nav-->
     <script>Nav();</script>
     <!--Đọc header-->
-    <script>Header();</script>
+    <!-- <script>Header();</script> -->
     <section>
         <div class="khungctsp">
             <div class="header-khung">
@@ -128,15 +146,15 @@
                 <div class="optionsp">
                     <div class="chonCauHinh">
                         <div class="CH1">
-                            <a href="##" class="item-CH">256GB</a>
-                            <a href="##" class="item-CH">512GB</a>
-                            <a href="##" class="item-CH">1TB</a>
+                            <a href="##" class="item-CH" onclick="selectOption(event)">256GB</a>
+                            <a href="##" class="item-CH" onclick="selectOption(event)">512GB</a>
+                            <a href="##" class="item-CH" onclick="selectOption(event)">1TB</a>
                         </div>
                         <div class="CH2">
-                            <a href="##" class="item-CH">Titan xanh</a>
-                            <a href="##" class="item-CH">Titan đen</a>
-                            <a href="##" class="item-CH">Titan tự nhiên</a>
-                            <a href="##" class="item-CH">Titan trắng</a>
+                            <a href="##" class="item-CH" onclick="selectOption(event)">Titan xanh</a>
+                            <a href="##" class="item-CH" onclick="selectOption(event)">Titan đen</a>
+                            <a href="##" class="item-CH" onclick="selectOption(event)">Titan tự nhiên</a>
+                            <a href="##" class="item-CH" onclick="selectOption(event)">Titan trắng</a>
                         </div>
                     </div>
                     <div class="khungGia">
@@ -209,7 +227,7 @@
                                 </div>
                                 <div class="button-mua">
                                     <div class="row2">
-                                        <button type="button" class="btn btn1" style="background-color: rgb(255, 94, 36);" data-bs-toggle="modal" data-bs-target="#dathang" onclick="checkDatHang();">Mua ngay</button>
+                                        <button type="button" class="btn btn1" style="background-color: rgb(255, 94, 36);" onclick="checkDatHang();">Mua ngay</button>
                                         <button type="button" class="btn btn2" onclick="themGioHang('st');"><i class="fas fa-shopping-cart"></i>Thêm vào giỏ hàng</button>
                                     </div>
                                 </div>
@@ -699,7 +717,7 @@
                 alert("Bạn vui lòng đăng nhập để thực hiện chức năng này!");
                 $("#modallog").modal('show');
             }else{
-                $("dathang").modal('show');
+                $("#dathang").modal('show');
             }
         }
       </script>
