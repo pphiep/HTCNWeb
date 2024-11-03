@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/User_manual.css">
+    <title>Pharmacy Management System - User Manual</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <h1>TÀI LIỆU HƯỚNG DẪN SỬ DỤNG</h1>
+            <p>Phiên bản: V1.0</p>
+        </div>
+
+        <div class="toc">
+            <h2>NỘI DUNG</h2>
+            <ol>
+                <li><a href="#intro">GIỚI THIỆU ỨNG DỤNG</a></li>
+                <li><a href="#requirements">CẤU HÌNH PHẦN CỨNG - PHẦN MỀM</a></li>
+                <li><a href="#features">CÁC CHỨC NĂNG CHÍNH</a></li>
+            </ol>
+        </div>
+
+        <div class="section" id="intro">
+            <h1>1. GIỚI THIỆU ỨNG DỤNG</h1>
+            <h2>Giới thiệu chung</h2>
+            <p>Chương trình quản lý hiệu thuốc tây DNGH được phát triển nhằm đáp ứng nhu cầu quản lý và vận hành hiệu
+                thuốc
+                một cách hiệu quả và chuyên nghiệp. Ứng dụng này không chỉ giúp các nhà quản lý theo dõi tình hình kinh
+                doanh mà còn hỗ trợ nhân viên trong việc quản lý đơn hàng và thông tin khách hàng.</p>
+
+            <h2>Các chức năng chính</h2>
+            <ul class="feature-list">
+                <li>Lưu trữ</li>
+                <li>Tra cứu</li>
+                <li>Tạo hóa đơn</li>
+                <li>Thống kê theo doanh thu (nhân viên / quản lý)</li>
+                <li>Thống kê theo sản phẩm</li>
+                <li>Xử lý hoàn trả sản phẩm</li>
+                <li>Xuất báo cáo</li>
+            </ul>
+
+            <h2>Tiêu chí chất lượng</h2>
+            <div class="requirements">
+                <h3>Hiệu suất</h3>
+                <ul>
+                    <li>Khả năng xử lý dữ liệu lớn: Chương trình có khả năng xử lý một số lượng lớn dữ liệu đồng thời mà
+                        không bị chậm hoặc gián đoạn.</li>
+                    <li>Thời gian phản hồi: Thời gian tối đa cho mỗi thao tác không vượt quá 2 giây.</li>
+                </ul>
+
+                <h3>Khả dụng</h3>
+                <p>Chương trình phải có khả năng hoạt động 24/7 với thời gian gián đoạn tối thiểu và có cơ chế sao lưu
+                    để
+                    đảm bảo dữ liệu không bị mất khi có sự cố.</p>
+
+                <h3>Khả năng sử dụng</h3>
+                <p>Giao diện người dùng phải dễ sử dụng, thân thiện và phù hợp với các đối tượng người dùng khác nhau.
+                </p>
+            </div>
+        </div>
+
+        <div class="section" id="requirements">
+            <h1>2. CẤU HÌNH PHẦN CỨNG - PHẦN MỀM</h1>
+
+            <h2>Phần cứng</h2>
+            <table>
+                <tr>
+                    <th>CPU</th>
+                    <th>RAM</th>
+                    <th>HDD</th>
+                    <th>Architecture</th>
+                </tr>
+                <tr>
+                    <td>Intel Core i5, 2.3 GHz</td>
+                    <td>Tối thiểu 8 GB</td>
+                    <td>Tối thiểu 500GB</td>
+                    <td>64 bit</td>
+                </tr>
+            </table>
+
+            <h2>Phần mềm</h2>
+            <table>
+                <tr>
+                    <th>Tên phần mềm</th>
+                    <th>Phiên bản</th>
+                    <th>Loại</th>
+                </tr>
+                <tr>
+                    <td>Apache NetBeans IDE 23</td>
+                    <td>20.0.2</td>
+                    <td>IDE cho Java</td>
+                </tr>
+                <tr>
+                    <td>IntelliJ IDEA 2024.2.4 (Community Edition)</td>
+                    <td>2024.2.4</td>
+                    <td>IDE cho Java</td>
+                </tr>
+                <tr>
+                    <td>SQL Server Management Studio 20</td>
+                    <td>20.2.30.0</td>
+                    <td>Hệ quản trị cơ sở dữ liệu</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Windows 11</td>
+                    <td>11</td>
+                    <td>Hệ điều hành</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" id="features">
+            <h1>3. CÁC CHỨC NĂNG CHÍNH</h1>
+
+            <h2>Chức năng của nhân viên</h2>
+
+            <div class="process-box">
+                <h3>Quy trình đăng nhập</h3>
+                <ol class="steps">
+                    <li>Nhân viên nhập tên tài khoản và mật khẩu đã được quản lý cung cấp</li>
+                    <li>Chọn nút "Log in" để hoàn tất quá trình đăng nhập</li>
+                </ol>
+                <img src="../IMAGE/log_in.png" alt="Màn hình đăng nhập" />
+
+                <div class="note">
+                    <h4>Quên mật khẩu?</h4>
+                    <ol class="steps">
+                        <li>Chọn tùy chọn "Forgot password"</li>
+                        <li>Nhập tên tài khoản của bạn</li>
+                        <li>Nhấn chuột trái vào nút "Gửi mã"</li>
+                        <li>Kiểm tra email đã đăng ký để nhận mật khẩu mới</li>
+                    </ol>
+                </div>
+                <img src="../IMAGE/forgot_password.png" alt="Màn hình quên mật khẩu" />
+            </div>
+
+            <div class="process-box">
+                <h3>Quy trình tạo hóa đơn</h3>
+                <ol class="steps">
+                    <li>Sau khi đăng nhập thành công:
+                        <ul>
+                            <li>Chọn mục "Hóa đơn"</li>
+                            <li>Chọn "Bán hàng"</li>
+                        </ul>
+                    </li>
+                    <img src="../IMAGE/menu_CreateOrder.png" alt="Menu bán hàng" />
+
+                    <li>Nhập thông tin sản phẩm:
+                        <ul>
+                            <li>Nhập hoặc quét mã vạch sản phẩm</li>
+                            <li>Thêm ghi chú vào hóa đơn tạm (nếu cần)</li>
+                        </ul>
+                    </li>
+                    <img src="../IMAGE/addProduct.png" alt="Nhập thông tin sản phẩm" />
+
+                    <li>Xử lý thông tin khách hàng:
+                        <ul>
+                            <li>Nhập số điện thoại khách hàng</li>
+                            <li>Đối với khách hàng đã có trong hệ thống:
+                                <ul>
+                                    <li>Tùy chọn đổi điểm tích lũy</li>
+                                    <li>Chọn phương thức thanh toán</li>
+                                    <li>Nhập số tiền khách đưa (nếu thanh toán tiền mặt)</li>
+                                </ul>
+                            </li>
+                            <li>Đối với khách hàng mới:
+                                <ul>
+                                    <li>Nhập thông tin khách hàng (nếu được cung cấp)</li>
+                                    <li>Chọn nút "Thêm" để lưu thông tin</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <img src="../IMAGE/fill_addCus.png" alt="Xử lý thông tin khách hàng" />
+                    <img src="../IMAGE/table_addCustomer.png" alt="Xử lý thông tin khách hàng" />
+                </ol>
+            </div>
+
+            <div class="process-box">
+                <h3>Chức năng của quản lý</h3>
+                <h4>Thống kê doanh thu theo tháng</h4>
+                <ol class="steps">
+                    <li>Đăng nhập vào hệ thống (quy trình tương tự như nhân viên)</li>
+                    <li>Truy cập chức năng thống kê:
+                        <ul>
+                            <li>Chọn mục "Hóa đơn"</li>
+                            <li>Chọn "Thống kê doanh thu"</li>
+                        </ul>
+                    </li>
+                    <img src="../IMAGE/menu_statistical.png" alt="Menu thống kê doanh thu" />
+
+                    <li>Thực hiện thống kê:
+                        <ul>
+                            <li>Chọn "Thống kê theo"</li>
+                            <li>Chọn "Tháng"</li>
+                            <li>Chọn tháng và năm cần thống kê</li>
+                        </ul>
+                    </li>
+                    <img src="/api/placeholder/400/320" alt="Giao diện thống kê" />
+
+                    <li>Xuất báo cáo:
+                        <ul>
+                            <li>Chọn "Xuất báo cáo" để tạo file báo cáo</li>
+                            <li>Lưu file báo cáo vào vị trí mong muốn</li>
+                        </ul>
+                    </li>
+                    <img src="/api/placeholder/400/320" alt="Xuất báo cáo" />
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
